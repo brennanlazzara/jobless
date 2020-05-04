@@ -1,6 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
 
 import './App.css';
 
@@ -15,7 +17,14 @@ function App() {
         <Route exact path="/joblistings" component={JobListings} />
         <Route exact path="/login" component={Login} /> */}
        </div>
+
+       <div>
+       <Footer />
+       </div>
+       
     </Router>
+  
+ 
     
   );
 }
