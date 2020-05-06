@@ -5,9 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Fragment>
-    <App />
-  </Fragment>,
+  <>
+    <App/>
+  </>,
   document.getElementById('root')
 );
 
