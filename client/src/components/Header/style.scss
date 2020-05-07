@@ -1,0 +1,45 @@
+@import './_config';
+
+.header {
+    margin: 0 auto;
+    background-color: $background-color;
+
+
+    .navbar {
+        padding: 10vh 0;
+        margin-right: 10vw;
+        margin-left: 10vw;
+    }
+
+    img {
+        width: 20vw;
+    }
+
+    .link {
+        color: #333 !important;
+        text-decoration: none;
+        display: flex;
+        align-items: flex-end;
+        font-weight: bolder;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1.5rem; 
+    }
+    
+    #aboutLink {
+       margin-right: 5vw;
+    }
+
+    .link:hover {
+        color: $hover-color;
+    }
+
+    .navbar-toggler {
+        background-color: #333;
+    }
+    .navbar-toggler-icon {
+        background-color: $background-color;
+    
+}
+
+
+}
