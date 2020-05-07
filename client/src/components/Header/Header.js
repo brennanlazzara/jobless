@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './style.css';
 import {
   Collapse,
   Navbar,
@@ -9,33 +10,35 @@ import {
   NavLink,
 } from 'reactstrap';
 
+
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">JobLess</NavbarBrand>
+    <div className="header">
+      <Navbar expand="md">
+        <NavbarBrand href="/"><img src="/assets/tlogos.png" alt="logo"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+        <Collapse  isOpen={isOpen} navbar>
+          <Nav className="ml-auto" navbar>
             <NavItem>
-            <NavLink href="/about">About</NavLink>
+            <NavLink id="aboutLink" className="link" href="/about">About</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/blog">Blog</NavLink>
+              <NavLink id="aboutLink" className="link" href="/blog">Blog</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/joblistings">Job Listings</NavLink>
+              <NavLink id="aboutLink" className="link" href="/joblistings">Job Listings</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/login">Login</NavLink>
+              <NavLink className="link" href="/login">Login</NavLink>
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
+      
     </div>
   );
 };
