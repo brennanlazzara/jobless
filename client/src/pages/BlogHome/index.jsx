@@ -3,7 +3,7 @@ import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-import { Form } from '../../components/BlogArticle';
+import { Form } from '../BlogArticle';
 
 class Home extends React.Component {
     constructor(props) {
