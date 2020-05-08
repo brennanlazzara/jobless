@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import createHistory from 'history/createBrowserHistory';
 import ReactDOM from 'react-dom';
 import App from './App';

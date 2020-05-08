@@ -1,6 +1,6 @@
 import React from 'react';
-import Main from '../components/Main';
-import Bottom from '../components/Bottom';
+import Main from '../components/Container/Main';
+import Bottom from '../components/Container/Bottom';
 import Container from '../components/Container'
 
  const Home = ()=> {

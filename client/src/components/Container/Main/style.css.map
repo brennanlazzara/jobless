@@ -1,0 +1,13 @@
+{
+    "version": 3,
+<<<<<<< HEAD
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACA,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,GAAG;CACb",
+=======
+    "mappings": "AAAA,AAAA,GAAG,CAAC;EACA,KAAK,EAAC,IAAI;CAEb",
+>>>>>>> dcf853b95d5a4f909ab64ff42d615147e8b04027
+    "sources": [
+        "style.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}
