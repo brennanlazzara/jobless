@@ -1,8 +1,32 @@
-img {
+.img-height {
   width: 100%;
-<<<<<<< HEAD
-  height: 70%;
-=======
->>>>>>> dcf853b95d5a4f909ab64ff42d615147e8b04027
+  height: 50%;
+  opacity: 1;
+  display: block;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  background-size: cover;
+  background-position: 50% 50%;
+
 }
+/* .main-img {
+  opacity: 1;
+  display: block;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+  height:auto; */
+
 /*# sourceMappingURL=style.css.map */
+
+.centered {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ padding-top: 10%;
+}
+
+
+ .btn{
+  margin-left: 35%;
+ }
