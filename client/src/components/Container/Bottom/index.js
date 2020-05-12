@@ -5,10 +5,10 @@ const Bottom = (props) => {
     return(
       <Container>
         <Row>
-          <Col><img src="./assets/jobless3.jpg"  alt="Bottom" />
+          <Col><img src="./assets/jobless3.jpeg"  alt="Bottom" />
           </Col>
           <Col>
-          <img src="./assets/jobless3.jpg"  alt="Bottom" />
+          <img src="./assets/jobless3.jpeg"  alt="Bottom" />
           </Col>
         </Row>
       </Container>
