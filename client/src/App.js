@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
-import Home from './pages/home';
-import BlogArticle from './pages/BlogArticle/Form';
-import BlogHome from './pages/BlogHome';
+import Home from './Pages/home';
+import BlogArticle from './components/BlogComponents/BlogArticle/Form';
+import BlogHome from './components/BlogComponents/BlogHome';
 
 
 
