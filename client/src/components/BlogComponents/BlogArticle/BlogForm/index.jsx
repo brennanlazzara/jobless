@@ -1,5 +1,6 @@
 import React from 'react';
-// import Axios from 'axios';
+import axios from 'axios';
+import { connect } from 'react-redux';
 
 class BlogForm extends React.Component {
   constructor(props) {
@@ -15,16 +16,19 @@ class BlogForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // handleSubmit() {
-  //   const { title, body, author } = this.state;
+  handleSubmit() {
+    const { onSubmit } = this.state;
+    const { title, body, author } = this.state;
 
-  //   return axios.post('http://localhost:8000/api/articles', {
-  //     title,
-  //     body,
-  //     author,
-  //   });
-  // }
-
+    return axios.post('http://localhost:8000/api/articles', {
+      title,
+      body,
+      author,
+    })
+    
+    .then((res) => onSubmit (res.data));
+  }
+  
   handleChangeField(key, event) {
     this.setState({
       [key]: event.target.value,
@@ -54,10 +58,16 @@ class BlogForm extends React.Component {
           className="form-control my-3"
           placeholder="Article Author"
         />
-        <button className="btn btn-primary float-right">Submit</button>
+        <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit</button>
       </div>
     )
   }
 }
 
-export default BlogForm;
+const mapDispatchToProps = dispatch => ({
+  onSubmit: data => dispatch({
+    type: 'SUBMIT_ARTICLE', data
+  })
+});
+
+export default connect(null, mapDispatchToProps) (BlogForm);
