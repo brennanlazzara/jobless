@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from 'redux';
 
-import { home } from './reducers';
+import { bloghome } from './reducers';
 
 const reducers = combineReducers({
-  home,
+  bloghome,
 });
 
 const store = createStore(reducers);
