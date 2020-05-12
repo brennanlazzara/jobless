@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/home';
 import BlogArticle from './pages/BlogArticle/Form';
 import BlogHome from './pages/BlogHome';
+import About from './pages/about';
 
 
 
@@ -17,11 +18,11 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route exact path="/blogpost" component={BlogArticle} />
         <Route exact path="/bloghome" component={BlogHome} />
-        {/* <Route exact path="/about" component={About} />
-        <Route exact path="/joblistings" component={JobListings} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/about" component={About} />
+         {/* <Route exact path="/joblistings" component={JobListings} />
+        <Route exact path="/login" component={Login} />  */}
 
-         */}
+         }
 
        <div>
        <Footer />

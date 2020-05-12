@@ -1,9 +1,9 @@
 import React from 'react';
 // import mainpic from '../Main';
 import "./style.css";
-import { Button, Jumbotron } from 'reactstrap'
+import { Button } from 'reactstrap'
 
-import FadeIn from "react-image-fade-in";
+// import FadeIn from "react-image-fade-in";
 
 
 const Main = (props) => {
@@ -24,7 +24,7 @@ const Main = (props) => {
                     </>
                    
                 </div>
-     
+        
 
         </div>
                 
