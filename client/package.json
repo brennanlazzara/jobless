@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
+    "bootstrap-3-card": "^0.2.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "history": "^4.10.1",
     "moment": "^2.25.3",
