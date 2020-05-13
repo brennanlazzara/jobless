@@ -17,7 +17,7 @@ class BlogForm extends React.Component {
   }
 
   handleSubmit() {
-    const { onSubmit } = this.state;
+    const { onSubmit } = this.props;
     const { title, body, author } = this.state;
 
     return axios.post('http://localhost:8000/api/articles', {
