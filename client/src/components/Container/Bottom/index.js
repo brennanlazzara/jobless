@@ -1,10 +1,17 @@
 import React from 'react';
+import { Row, Col, Container } from 'reactstrap';
 
-const Bottom = () => {
+const Bottom = (props) => {
     return(
-        <>
-        hi
-        </>
+      <Container>
+        <Row>
+          <Col><img src="./assets/jobless3.jpeg"  alt="Bottom" />
+          </Col>
+          <Col>
+          <img src="./assets/jobless3.jpeg"  alt="Bottom" />
+          </Col>
+        </Row>
+      </Container>
     )
 }
 
