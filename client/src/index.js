@@ -1,5 +1,5 @@
 import React from 'react';
-import createHistory from 'history/createBrowserHistory';
+// import createHistory from 'history/createBrowserHistory';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,4 +20,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-serviceWorker.unregister();
+
+serviceWorker.register();

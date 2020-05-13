@@ -1,12 +1,22 @@
 img {
     width:100%;
-<<<<<<< HEAD
-    height:70%;
-=======
-    
->>>>>>> dcf853b95d5a4f909ab64ff42d615147e8b04027
+    height:20%;
+   opacity: 1;
+   display: block;
+   transition: .5s ease;
 }
 
-// .main-img{
-//     background-image: url('./assets/job2.jpg');
+
+.main-img{
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+}
+
+// .content{
+//     position: absolute;
+//     top:45%;
+//     left:50;
+//     transform:translate(-50%, -50%);
+//     transform:translate(-50%, -50%);
 // }
