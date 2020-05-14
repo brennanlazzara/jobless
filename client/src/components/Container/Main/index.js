@@ -12,7 +12,7 @@ const Main = (props) => {
 
         <div className="main-img">
            
-                <img src="./assets/job2.jpg" className="img-height" alt="Main" />
+                <img src="./assets/job2.jpg" className="img-height shadow mb-5 rounded" alt="Main" />
                  <div className="centered"> 
                  
                  <h1 className="display-4">Find Your New Job Today</h1>
