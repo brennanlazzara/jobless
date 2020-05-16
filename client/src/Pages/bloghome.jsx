@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { BlogForm } from '../components/BlogComponents/BlogArticle';
 import Spinner from '../components/BlogComponents/Spinner/Spinner';
+import {Link} from 'react-router-dom';
 
 const BlogHome = props => {
   useEffect(() => {
@@ -35,17 +35,19 @@ const BlogHome = props => {
 
 
   if (articles.length === 0) {
-    return <div><Spinner/></div>
+    return <div><Spinner /></div>
   }
 
   return (
 
     <div className="container">
       <div className="row pt-5">
-        <div className="col-12 col-lg-6 offset-lg-3">
+        <div className="col-6 col-lg-6 offset-lg-3">
           <h1 className="text-center">Jobless Blog</h1>
         </div>
-        {/* <BlogForm /> */}
+        <div className="col-6 col-lg-6 offset-lg-3">
+        <Link to='/blog/post' className="nav-link" id="create-blog"> Create Blog Post </Link>
+        </div>
       </div>
       <div className="row pt-5">
         <div className="col-12 col-lg-6 offset-lg-3">
