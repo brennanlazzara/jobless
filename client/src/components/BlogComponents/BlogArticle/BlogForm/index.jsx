@@ -3,6 +3,7 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 
 class BlogForm extends React.Component {
+  // convert these to a functional component
   constructor(props) {
     super(props);
 
@@ -25,10 +26,10 @@ class BlogForm extends React.Component {
       body,
       author,
     })
-    
-    .then((res) => onSubmit (res.data));
+
+      .then((res) => onSubmit(res.data));
   }
-  
+
   handleChangeField(key, event) {
     this.setState({
       [key]: event.target.value,
@@ -58,7 +59,7 @@ class BlogForm extends React.Component {
           className="form-control my-3"
           placeholder="Article Author"
         />
-        <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit</button>
+        <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit Yoself</button>
       </div>
     )
   }
@@ -70,4 +71,4 @@ const mapDispatchToProps = dispatch => ({
   })
 });
 
-export default connect(null, mapDispatchToProps) (BlogForm);
+export default connect(null, mapDispatchToProps)(BlogForm);

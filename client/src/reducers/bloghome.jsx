@@ -3,7 +3,7 @@ export default (state={articles: []}, action) => {
     case 'HOME_PAGE_LOADED':
       return {
         ...state,
-        articles: action.data.articles,
+        articles: action.data,
       };
     case 'SUBMIT_ARTICLE':
       return {

@@ -1,93 +1,91 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
-
 import { BlogForm } from '../components/BlogComponents/BlogArticle';
+import Spinner from '../components/BlogComponents/Spinner/Spinner';
 
-class BlogHome extends React.Component {
-  constructor(props) {
-    super(props);
+const BlogHome = props => {
+  useEffect(() => {
+    const { onLoad } = props;
 
-    this.handleDelete = this.handleDelete.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-  }
+    axios('/api/articles')
+      .then((res) => {
+        onLoad(res.data)
+        console.log(res)
+      })
+  }, []);
 
+  const handleDelete = (id) => {
+    const { onDelete } = props;
 
-  componentDidMount() {
-    const { onLoad } = this.props;
-
-    axios('http://localhost:8000/api/articles')
-      .then((res) => onLoad(res.data));
-  }
-
-  handleDelete(id) {
-    const { onDelete } = this.props;
-
-    return axios.delete(`http://localhost:8000/api/articles/${id}`)
+    return axios.delete(`/api/articles/${id}`)
       .then(() => onDelete(id));
   }
 
-  handleEdit(article) {
-    const { setEdit } = this.props;
+  const handleEdit = (article) => {
+    const { setEdit } = props;
 
     setEdit(article);
   }
 
-  render() {
-    const { articles } = this.props;
 
-    if (typeof articles === 'undefined') {
-      return <div>Fetching articles...</div>
-    }
+  const { articles } = props;
+  console.log(articles)
 
-    return (
-      <div className="container">
-        <div className="row pt-5">
-          <div className="col-12 col-lg-6 offset-lg-3">
-            <h1 className="text-center">LightBlog</h1>
-          </div>
-          <BlogForm />
+
+  if (articles.length === 0) {
+    return <div><Spinner/></div>
+  }
+
+  return (
+
+    <div className="container">
+      <div className="row pt-5">
+        <div className="col-12 col-lg-6 offset-lg-3">
+          <h1 className="text-center">Jobless Blog</h1>
         </div>
-        <div className="row pt-5">
-          <div className="col-12 col-lg-6 offset-lg-3">
-            {articles.map((article) => {
-              return (
-                <div className="card my-3">
-                  <div className="card-header">
-                    {article.title}
-                  </div>
-                  <div className="card-body">
-                    {article.body}
-                    <p className="mt-5 text-muted"><b>{article.author}</b> {moment(new Date(article.createdAt)).fromNow()}</p>
-                  </div>
-                  <div className="card-footer">
-                    <div className="row">
-                      <button onClick={() => this.handleEdit(article)} className="btn btn-primary mx-3">
-                        Edit
+        {/* <BlogForm /> */}
+      </div>
+      <div className="row pt-5">
+        <div className="col-12 col-lg-6 offset-lg-3">
+          {articles.map((article) => {
+            return (
+              <div className="card my-3">
+                <div className="card-header">
+                  {article.title}
+                </div>
+                <div className="card-body">
+                  {article.body}
+                  <p className="mt-5 text-muted"><b>{article.author}</b> {moment(new Date(article.createdAt)).fromNow()}</p>
+                </div>
+                <div className="card-footer">
+                  <div className="row">
+                    <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
+                      Edit
                       </button>
-                      <button onClick={() => this.handleDelete(article._id)} className="btn btn-danger">
-                        Delete
+                    <button onClick={() => handleDelete(article._id)} className="btn btn-danger">
+                      Delete
                       </button>
-                    </div>
                   </div>
                 </div>
+              </div>
 
-              )
-            })}
-          </div>
+            )
+          })}
         </div>
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 const mapStateToProps = state => ({
-  articles: state.home.articles,
+  articles: state.bloghome.articles || [],
 });
 
 const mapDispatchToProps = dispatch => ({
-  onLoad: data => dispatch({ type: 'BLOG_PAGE_LOADED', data }),
+  onLoad: data => dispatch({ type: 'HOME_PAGE_LOADED', data }),
   onDelete: id => dispatch({ type: 'DELETE_ARTICLE', id }),
   setEdit: article => dispatch({ type: 'SET_EDIT', article }),
 });
