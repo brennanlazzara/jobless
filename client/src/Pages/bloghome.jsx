@@ -25,8 +25,9 @@ const BlogHome = props => {
 
   const handleEdit = (article) => {
     const { setEdit } = props;
-
-    setEdit(article);
+    return axios.put(`/api/articles/${id}`, )
+      .then(() => setEdit(id));
+    // setEdit(article);
   }
 
 

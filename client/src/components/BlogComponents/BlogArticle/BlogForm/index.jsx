@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import { Redirect } from "react-router-dom";
 
 class BlogForm extends React.Component {
   // convert these to a functional component
@@ -11,6 +12,7 @@ class BlogForm extends React.Component {
       title: '',
       body: '',
       author: '',
+      redirect: null,
     }
 
     this.handleChangeField = this.handleChangeField.bind(this);
@@ -21,13 +23,17 @@ class BlogForm extends React.Component {
     const { onSubmit } = this.props;
     const { title, body, author } = this.state;
 
-    return axios.post('http://localhost:8000/api/articles', {
+     axios.post('http://localhost:8000/api/articles', {
       title,
       body,
       author,
     })
 
-      .then((res) => onSubmit(res.data));
+      .then((res) => {
+        console.log(res.data)
+        onSubmit(res.data)
+        this.setState({redirect: "/blog"})
+      });
   }
 
   handleChangeField(key, event) {
@@ -38,8 +44,13 @@ class BlogForm extends React.Component {
 
   render() {
     const { title, body, author } = this.state;
+    
+    if (this.state.redirect) {
+      return <Redirect to={this.state.redirect} />
+    }
 
     return (
+  
       <div className="col-12 col-lg-6 offset-lg-3">
         <input
           onChange={(ev) => this.handleChangeField('title', ev)}
@@ -59,7 +70,7 @@ class BlogForm extends React.Component {
           className="form-control my-3"
           placeholder="Article Author"
         />
-        <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit Yoself</button>
+        <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit</button>
       </div>
     )
   }
