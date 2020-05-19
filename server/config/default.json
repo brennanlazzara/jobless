@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://jobless:jobless@joblesscluster-lisit.mongodb.net/test?retryWrites=true&w=majority"
+  }

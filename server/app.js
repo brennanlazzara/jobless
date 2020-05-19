@@ -5,12 +5,16 @@ const session = require('express-session');
 const cors = require('cors');
 const errorHandler = require('errorhandler');
 const mongoose = require('mongoose');
+const connectDB = require('./config/connection');
 
 mongoose.promise = global.Promise;
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const app = express();
+
+// CONNECT DATABASE
+connectDB();
 
 app.use(cors());
 app.use(require('morgan')('dev'));
@@ -23,13 +27,17 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
-mongoose.connect('mongodb://localhost/lightblog');
+
+
+
 mongoose.set('debug', true);
 
 // Add models
 require('./models/Articles');
 // Add routes
-app.use(require('./routes'));
+app.use('/api/articles', require('./routes/api/articles'));
+
+
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

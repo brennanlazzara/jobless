@@ -19,4 +19,5 @@ ArticlesSchema.methods.toJSON = function() {
   };
 };
 
-mongoose.model('Articles', ArticlesSchema);
+module.exports = Articles = 
+mongoose.model('Article', ArticlesSchema);
