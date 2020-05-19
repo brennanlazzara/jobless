@@ -23,7 +23,9 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
-mongoose.connect('mongodb://localhost/blogpost');
+mongoose.connect('mongodb+srv://jobless:jobless@joblesscluster-lisit.mongodb.net/test?retryWrites=true&w=majority');
+
+
 mongoose.set('debug', true);
 
 // Add models
