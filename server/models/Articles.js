@@ -20,4 +20,4 @@ ArticlesSchema.methods.toJSON = function() {
 };
 
 module.exports = Articles = 
-mongoose.model('Articles', ArticlesSchema);
+mongoose.model('Article', ArticlesSchema);
