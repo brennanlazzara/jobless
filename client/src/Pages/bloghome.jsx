@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { BlogForm } from '../components/BlogComponents/BlogArticle';
+// import { BlogForm } from '../components/BlogComponents/BlogArticle';
 import Spinner from '../components/BlogComponents/Spinner/Spinner';
+import { Link } from 'react-router-dom';
 
 const BlogHome = props => {
   useEffect(() => {
@@ -42,8 +43,11 @@ const BlogHome = props => {
 
     <div className="container">
       <div className="row pt-5">
-        <div className="col-12 col-lg-6 offset-lg-3">
+        <div className="col-9 col-lg-6 offset-lg-3">
           <h1 className="text-center">Jobless Blog</h1>
+        </div>
+        <div className="col-3 col-lg-6 offset-lg-3">
+          <Link to='/blog/post' className="text-center">Create New Post</Link>
         </div>
         {/* <BlogForm /> */}
       </div>

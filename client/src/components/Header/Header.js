@@ -19,7 +19,7 @@ const Header = (props) => {
   return (
     <div className="header">
       <Navbar expand="md">
-        <NavbarBrand href="/"><img src="/assets/tlogos.png" alt="logo"></img></NavbarBrand>
+        <NavbarBrand href="/"><img src="/assets/HEADERLOGO.png" alt="logo"></img></NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse  isOpen={isOpen} navbar>
           <Nav className="ml-auto" navbar>
