@@ -1,21 +1,21 @@
-.card-text{
-font-size: 30px;
+.card-text {
+  font-size: 30px;
 }
 
-.btn-secondary{
-    border: none;
-    color: white;
-    padding: 15px 32px 15px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.btn-secondary {
+  border: none;
+  color: white;
+  padding: 15px 32px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }
 
-.footer-bottom{
-    text-align: center;
-    justify-content: center;
+.footer-bottom {
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
-
-/* No CSS *//*# sourceMappingURL=style.css.map */
-
+/*# sourceMappingURL=style.css.map */
