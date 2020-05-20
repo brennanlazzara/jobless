@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
+import { BlogForm } from '../components/BlogComponents/BlogArticle';
 import Spinner from '../components/BlogComponents/Spinner/Spinner';
-import {Link} from 'react-router-dom';
 
 const BlogHome = props => {
   useEffect(() => {
@@ -23,12 +23,11 @@ const BlogHome = props => {
       .then(() => onDelete(id));
   }
 
-  // const handleEdit = (article) => {
-  //   const { setEdit } = props;
-  //   return axios.put(`/api/articles/${id}`, (req.body))
-  //     .then(() => setEdit(id));
-  //   setEdit(article);
-  // }
+  const handleEdit = (article) => {
+    const { setEdit } = props;
+
+    setEdit(article);
+  }
 
 
   const { articles } = props;
@@ -36,19 +35,17 @@ const BlogHome = props => {
 
 
   if (articles.length === 0) {
-    return <div><Spinner /></div>
+    return <div><Spinner/></div>
   }
 
   return (
 
     <div className="container">
       <div className="row pt-5">
-        <div className="col-6 col-lg-6 offset-lg-3">
+        <div className="col-12 col-lg-6 offset-lg-3">
           <h1 className="text-center">Jobless Blog</h1>
         </div>
-        <div className="col-6 col-lg-6 offset-lg-3">
-        <Link to='/blog/post' className="nav-link" id="create-blog"> Create Blog Post </Link>
-        </div>
+        {/* <BlogForm /> */}
       </div>
       <div className="row pt-5">
         <div className="col-12 col-lg-6 offset-lg-3">
@@ -64,9 +61,9 @@ const BlogHome = props => {
                 </div>
                 <div className="card-footer">
                   <div className="row">
-                    {/* <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
+                    <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
                       Edit
-                      </button> */}
+                      </button>
                     <button onClick={() => handleDelete(article._id)} className="btn btn-danger">
                       Delete
                       </button>
