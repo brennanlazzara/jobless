@@ -23,12 +23,12 @@ const BlogHome = props => {
       .then(() => onDelete(id));
   }
 
-  const handleEdit = (article) => {
-    const { setEdit } = props;
-    return axios.put(`/api/articles/${id}`, (req.body))
-      .then(() => setEdit(id));
-    setEdit(article);
-  }
+  // const handleEdit = (article) => {
+  //   const { setEdit } = props;
+  //   return axios.put(`/api/articles/${id}`, (req.body))
+  //     .then(() => setEdit(id));
+  //   setEdit(article);
+  // }
 
 
   const { articles } = props;
@@ -64,9 +64,9 @@ const BlogHome = props => {
                 </div>
                 <div className="card-footer">
                   <div className="row">
-                    <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
+                    {/* <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
                       Edit
-                      </button>
+                      </button> */}
                     <button onClick={() => handleDelete(article._id)} className="btn btn-danger">
                       Delete
                       </button>
