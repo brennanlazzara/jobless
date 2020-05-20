@@ -7,6 +7,22 @@
   transition: .5s ease;
 } 
 
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  margin-top: 10%;
+
+  /* transform: translate(-50%, -50%); */
+}
+
+.btn{
+  top: 50%;
+  margin-top: 5%;
+  margin-left: 35%;
+
+}
+
 .main-img {
   opacity: 1;
   display: block;
