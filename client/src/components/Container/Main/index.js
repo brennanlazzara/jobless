@@ -19,7 +19,7 @@ const Main = (props) => {
                 
                     <>
                         <Button variant="primary" size="lg" active>
-                            Click Here
+                           Register Now
                         </Button>{' '}
                     </>
                    

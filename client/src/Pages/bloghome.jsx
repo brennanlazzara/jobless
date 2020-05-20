@@ -9,7 +9,7 @@ const BlogHome = props => {
   useEffect(() => {
     const { onLoad } = props;
 
-    axios('/api/articles')
+    axios('http://localhost:8000/api/articles')
       .then((res) => {
         onLoad(res.data)
         console.log(res)
@@ -19,7 +19,7 @@ const BlogHome = props => {
   const handleDelete = (id) => {
     const { onDelete } = props;
 
-    return axios.delete(`/api/articles/${id}`)
+    return axios.delete(`http://localhost:8000/api/articles/${id}`)
       .then(() => onDelete(id));
   }
 
