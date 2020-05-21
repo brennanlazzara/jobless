@@ -2,7 +2,7 @@
   background-color: #333;
   text-align: center;
   padding-bottom: -20px;
-  margin-top: 20px;
+  margin-top: 10px;
   height: 30vh;
   color: #f2f2f2;
   left: 0;
@@ -11,6 +11,7 @@
   border-top: 5px solid #666666;
   /* position: fixed; */
   padding-top: 2px;
+
 }
 
 .copyright{
@@ -18,8 +19,27 @@
 }
 
 .foot-pic{
-  height: 70%;
-  width: 70%;
+  height: 50%;
+  width: 50%;
 }
+
+.link{
+  font-size: x-large;
+}
+
+a{
+  font-size: x-large;
+}
+
+.col-sm-4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+  
+}
+
+
+
 
 /*# sourceMappingURL=style.css.map */

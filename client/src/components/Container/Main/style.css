@@ -4,7 +4,7 @@
   opacity: 1;
   display: block;
   -webkit-transition: .5s ease;
-  
+
   transition: .5s ease;
 } 
 
@@ -30,4 +30,6 @@
   -webkit-transition: .5s ease;
   transition: .5s ease;
 }
+
+
 /*# sourceMappingURL=style.css.map */
