@@ -19,7 +19,14 @@
   "author": "cneill",
   "license": "mit",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "bcryptjs": "^2.4.3",
+    "express-session": "^1.17.1",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.5",
+    "morgan": "^1.10.0",
+    "cors": "^2.8.5",
+    "errorhandler": "^1.5.1",
     "concurrently": "^5.1.0",
     "config": "^3.3.0",
     "connect-flash": "^0.1.1",
@@ -28,7 +35,6 @@
     "faker": "^4.1.0",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.9.5",
     "multer": "^1.4.2",
     "passport": "^0.4.1",
     "passport-facebook": "^3.0.0",
@@ -44,6 +50,6 @@
     "express-list-endpoints": "^4.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }
