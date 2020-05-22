@@ -7,16 +7,6 @@ import { resolve, join } from 'path';
 import passport from 'passport';
 import all_routes from 'express-list-endpoints';
 
-const session = require('express-session');
-const connectDB = require('./config/connection');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const errorHandler = require('errorhandler');
-
-mongoose.promise = global.Promise;
-
-const isProduction = process.env.NODE_ENV === 'production';
-
 import routes from './routes';
 import { seedDb } from './utils/seed';
 
@@ -50,45 +40,11 @@ mongoose
     seedDb();
   })
   .catch((err) => console.log(err));
-  
- // CONNECT DATABASE
-connectDB();
 
 // Use Routes
 app.use('/', routes);
 app.use('/public', express.static(join(__dirname, '../public')));
 
-//merge app.use ************
-
-	
-app.use((req, res, next) => {	
-  const err = new Error('Not Found');	
-  err.status = 404;	
-  next(err);	
-});	
-if (!isProduction) {	
-  app.use((err, req, res) => {	
-    res.status(err.status || 500);	
-    res.json({	
-      errors: {	
-        message: err.message,	
-        error: err,	
-      },	
-    });	
-  });	
-}	
-app.use((err, req, res) => {	
-  res.status(err.status || 500);	
-  res.json({	
-    errors: {	
-      message: err.message,	
-      error: {},	
-    },	
-  });	
-});
-
-
-// *******************
 // Serve static assets if in production
 if (isProduction) {
   // Set static folder
@@ -97,28 +53,6 @@ if (isProduction) {
   app.get('*', (req, res) => {
     res.sendFile(resolve(__dirname, '../..', 'client', 'build', 'index.html')); // index is in /server/src so 2 folders up
   });
-
-//*****************
-// Add models & routes
-
-require('./models/Articles')
-
-app.use('/api/articles', require('./routes/api/articles'));	
-
-
-//******************
-app.use(cors());
-app.use(require('morgan')('dev'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
-
-if(!isProduction) {
-  app.use(errorHandler());
-}
-
-mongoose.set('debug', true);
 
   const port = process.env.PORT || 80;
   app.listen(port, () => console.log(`Server started on port ${port}`));

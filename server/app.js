@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -6,6 +7,16 @@ const cors = require('cors');
 const errorHandler = require('errorhandler');
 const mongoose = require('mongoose');
 const connectDB = require('./config/connection');
+const https = require('https');
+const fs = require('fs');
+const passport = require('passport');
+const all_routes = require('express-list-endpoints')
+
+// CHRIS'S CONST
+
+// import { resolve, join } from 'path';
+// import routes from './routes';
+// import { seedDb } from './utils/seed';
 
 mongoose.promise = global.Promise;
 
@@ -22,6 +33,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+
+// Bodyparser Middleware
+app.use(passport.initialize());
+require('./services/jwtStrategy');
+// require('./services/facebookStrategy');
+require('./services/googleStrategy');
+// require('./services/localStrategy');
+
 
 if(!isProduction) {
   app.use(errorHandler());

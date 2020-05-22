@@ -4,7 +4,7 @@ import passport from 'passport';
 const router = Router();
 
 router.get(
-  '/facebook',
+  '/auth/facebook',
   passport.authenticate('facebook', {
     scope: ['public_profile', 'email'],
   }),
@@ -13,7 +13,7 @@ router.get(
 const clientUrl = process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
 
 router.get(
-  '/facebook/callback',
+  '/auth/facebook/callback',
   passport.authenticate('facebook', {
     failureRedirect: '/',
     session: false,

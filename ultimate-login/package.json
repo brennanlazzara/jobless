@@ -12,5 +12,5 @@
   "author": "CNeill",
   "license": "MIT",
   "dependencies": {},
-  "devDependencies": {"nodemon": "^2.0.4"}
+  "devDependencies": {}
 }

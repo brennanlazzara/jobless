@@ -1,6 +1,6 @@
-// const mongoose = require('mongoose');
+
 const router = require('express').Router();
-// const Articles = mongoose.model('Articles');
+const passport = require('passport');
 const Articles = require('../../models/Articles');
 
 router.post('/', (req, res, next) => {
@@ -80,5 +80,58 @@ router.delete('/:id', async (req, res) => {
       res.status(500).send('Server Error');
     }
   });
+
+
+  // CHRIS GOOGLE ROUTE
+  router.get(
+    '/auth/google',
+    passport.authenticate('google', {
+      scope: ['profile', 'email'],
+    }),
+  );
+  
+  const clientUrl = process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
+  
+  router.get(
+    '/auth/google/callback',
+    passport.authenticate('google', {
+      failureRedirect: '/',
+      session: false,
+    }),
+    (req, res) => {
+      const token = req.user.generateJWT();
+      res.cookie('x-auth-cookie', token);
+      res.redirect(clientUrl);
+    },
+  );
+
+
+  // CHRIS FACEBOOK ROUTE
+  router.get(
+    '/auth/facebook',
+    passport.authenticate('facebook', {
+      scope: ['public_profile', 'email'],
+    }),
+  );
+  
+  const facebookClientUrl = process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
+  
+  router.get(
+    '/auth/facebook/callback',
+    passport.authenticate('facebook', {
+      failureRedirect: '/',
+      session: false,
+    }),
+    (req, res) => {
+      // console.log(req.user);
+      const token = req.user.generateJWT();
+      res.cookie('x-auth-cookie', token);
+      res.redirect(facebookClientUrl);
+    },
+  );
+
+
+
+
 
 module.exports = router;

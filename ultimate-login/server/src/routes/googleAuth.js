@@ -4,7 +4,7 @@ import passport from 'passport';
 const router = Router();
 
 router.get(
-  '/google',
+  '/auth/google',
   passport.authenticate('google', {
     scope: ['profile', 'email'],
   }),
@@ -13,7 +13,7 @@ router.get(
 const clientUrl = process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
 
 router.get(
-  '/google/callback',
+  '/auth/google/callback',
   passport.authenticate('google', {
     failureRedirect: '/',
     session: false,
