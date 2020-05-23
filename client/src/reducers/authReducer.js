@@ -9,7 +9,7 @@ import {
   ME_LOADING,
   ME_SUCCESS,
   ME_FAIL,
-} from '../types';
+} from '../constants/types';
 
 const initialState = {
   token: localStorage.getItem('token'),

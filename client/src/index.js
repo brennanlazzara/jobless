@@ -11,18 +11,18 @@ import store from './store';
 // CHRIS REDUX STORE
 import rootReducer from './store/reducers';
 
-// const initialState = {};
+const initialState = {};
 
-// const store = createStore(
-//   rootReducer,
-//   initialState,
-//   compose(
-//     applyMiddleware(thunk),
-//     (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
-//       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
-//       compose,
-//   ),
-// );
+const store = createStore(
+  rootReducer,
+  initialState,
+  compose(
+    applyMiddleware(thunk),
+    (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
+      compose,
+  ),
+);
 
 ReactDOM.render(
   <Router history={createHistory()}>

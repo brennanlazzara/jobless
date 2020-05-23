@@ -2,7 +2,7 @@ import {
   REGISTER_WITH_EMAIL_LOADING,
   REGISTER_WITH_EMAIL_SUCCESS,
   REGISTER_WITH_EMAIL_FAIL,
-} from '../types';
+} from '../constants/types';
 
 const initialState = {
   isLoading: false,

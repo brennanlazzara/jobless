@@ -12,7 +12,7 @@ import {
   EDIT_MESSAGE_SUCCESS,
   EDIT_MESSAGE_FAIL,
   CLEAR_MESSAGE_ERROR,
-} from '../types';
+} from '../constants/types';
 
 const initialState = {
   messages: [],

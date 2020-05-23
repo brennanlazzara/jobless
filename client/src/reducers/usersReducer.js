@@ -1,4 +1,4 @@
-import { GET_USERS_LOADING, GET_USERS_SUCCESS, GET_USERS_FAIL } from '../types';
+import { GET_USERS_LOADING, GET_USERS_SUCCESS, GET_USERS_FAIL } from '../constants/types';
 
 const initialState = {
   users: [],
