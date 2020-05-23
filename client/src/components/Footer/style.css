@@ -2,8 +2,13 @@
   background-color: #333;
   text-align: center;
   padding-bottom: -20px;
+<<<<<<< HEAD
   margin-top: 20px;
   height: 30vh;
+=======
+  margin-top: 10px;
+  /* height: 30vh; */
+>>>>>>> ee2e8dcd... footer is smaller,centered, logo is a normal size now
   color: #f2f2f2;
   left: 0;
   bottom: 0;
@@ -19,9 +24,12 @@
   background-color: #333;
 }
 
+<<<<<<< HEAD
 .foot-pic{
   height: 70%;
   width: 70%;
 }
+=======
+>>>>>>> ee2e8dcd... footer is smaller,centered, logo is a normal size now
 
 /*# sourceMappingURL=style.css.map */
