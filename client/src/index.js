@@ -4,10 +4,25 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
-
 import { Provider } from 'react-redux';
 import { Route, Switch, Router } from 'react-router-dom';
 import store from './store';
+
+// CHRIS REDUX STORE
+import rootReducer from './store/reducers';
+
+// const initialState = {};
+
+// const store = createStore(
+//   rootReducer,
+//   initialState,
+//   compose(
+//     applyMiddleware(thunk),
+//     (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
+//       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
+//       compose,
+//   ),
+// );
 
 ReactDOM.render(
   <Router history={createHistory()}>
