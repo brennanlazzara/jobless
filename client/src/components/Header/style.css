@@ -1,6 +1,7 @@
 .header {
   margin: 0 auto;
   background-color: #f9f9f9;
+  height:130px;
 }
 
 .header .navbar {
