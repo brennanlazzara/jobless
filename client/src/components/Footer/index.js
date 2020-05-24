@@ -4,7 +4,7 @@ import "../Footer/style.css";
 function index() {
   return (
     <div className="main-footer">
-      <div className="row">
+      <div className="row divy">
         <div className="col-sm-1">
           <img
             src="/assets/slogo.png"
