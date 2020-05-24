@@ -1,5 +1,10 @@
+
 import React from "react";
 import "../Footer/style.css";
+
+import React from 'react';
+import './style.css';
+
 
 function index() {
   return (

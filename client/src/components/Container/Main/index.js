@@ -2,7 +2,7 @@ import React from 'react';
 // import mainpic from '../Main';
 import "./style.css";
 import { Button } from 'reactstrap'
-
+import {Link} from 'react-router-dom'
 // import FadeIn from "react-image-fade-in";
 
 
@@ -19,7 +19,10 @@ const Main = (props) => {
                 
                     <>
                         <Button variant="primary" size="lg" active>
-                           Register Now
+                            <Link className="bold" to="/register">
+                                  Register Now  
+                            </Link>
+                       
                         </Button>{' '}
                     </>
                    
