@@ -41,7 +41,7 @@ function index() {
         </div>
       </div>
 
-      <div div className="row">
+      <div div className="row copy">
         <div className="col-sm-12 copyright">
           <p className="text-xs-center">
             © Copyright

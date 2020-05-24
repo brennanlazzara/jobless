@@ -6,7 +6,7 @@
   bottom: 0;
   width: 100%;
   border-top: 5px solid #666666;
-  padding-top: 2px;
+
  
 
 }
@@ -16,7 +16,8 @@
 }
 
 .copyright{
-  background-color: #333;
+
+  height:50px
 }
 
 
