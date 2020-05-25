@@ -1,6 +1,4 @@
-// const mongoose = require('mongoose');
 const router = require('express').Router();
-// const Articles = mongoose.model('Articles');
 const Articles = require('../../models/Articles');
 
 router.post('/', (req, res, next) => {
@@ -45,7 +43,7 @@ router.get('/', async (req, res, next) => {
 router.get('/:id', (req, res, next) => {
 
     return res.json({
-        article: req.article.toJSON()
+        article: req.article
     });
 });
 

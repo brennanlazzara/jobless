@@ -1,3 +1,4 @@
+require('dotenv').config()
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -6,12 +7,13 @@ const cors = require('cors');
 const errorHandler = require('errorhandler');
 const mongoose = require('mongoose');
 const connectDB = require('./config/connection');
-
-mongoose.promise = global.Promise;
+const passport = require("passport");
+const app = express();
 
 const isProduction = process.env.NODE_ENV === 'production';
 
-const app = express();
+mongoose.promise = global.Promise;
+mongoose.set('debug', true);
 
 // CONNECT DATABASE
 connectDB();
@@ -23,21 +25,20 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
 
+app.use(passport.initialize());
+require('./services/jwtStrategy');
+require('./services/googleStrategy');
+require('./services/localStrategy');
+
 if(!isProduction) {
   app.use(errorHandler());
 }
 
-
-
-
-mongoose.set('debug', true);
-
 // Add models
 require('./models/Articles');
+
 // Add routes
-app.use('/api/articles', require('./routes/api/articles'));
-
-
+app.use(require("./routes"));
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
