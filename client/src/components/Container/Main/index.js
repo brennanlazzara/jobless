@@ -18,7 +18,7 @@ const Main = (props) => {
                  <h1 className="display-4">Find Your New Job Today</h1>
                 
                     <>
-                        <Button variant="primary" size="lg" active>
+                        <Button href={'/register'} variant="primary" size="lg" active>
                            Register Now
                         </Button>{' '}
                     </>
