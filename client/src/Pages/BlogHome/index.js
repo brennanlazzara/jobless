@@ -3,14 +3,16 @@ import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
 // import { BlogForm } from '../components/BlogComponents/BlogArticle';
-import Spinner from '../components/BlogComponents/Spinner/Spinner';
+import Spinner from '../../components/BlogComponents/Spinner/Spinner';
 import { Link } from 'react-router-dom';
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const BlogHome = props => {
   useEffect(() => {
     const { onLoad } = props;
 
-    axios('http://localhost:8000/api/articles')
+    axios('/api/articles')
       .then((res) => {
         onLoad(res.data)
         console.log(res)
@@ -20,7 +22,7 @@ const BlogHome = props => {
   const handleDelete = (id) => {
     const { onDelete } = props;
 
-    return axios.delete(`http://localhost:8000/api/articles/${id}`)
+    return axios.delete(`/api/articles/${id}`)
       .then(() => onDelete(id));
   }
 
@@ -40,7 +42,8 @@ const BlogHome = props => {
   }
 
   return (
-
+    <>
+    <Header />
     <div className="container">
       <div className="row pt-5">
         <div className="col-9 col-lg-6 offset-lg-6">
@@ -80,6 +83,8 @@ const BlogHome = props => {
         </div>
       </div>
     </div>
+    <Footer />
+    </>
   );
 
 }

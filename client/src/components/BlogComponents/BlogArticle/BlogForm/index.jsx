@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
+import Header from "../../../Header";
+import Footer from "../../../Footer";
 
 class BlogForm extends React.Component {
   // convert these to a functional component
@@ -40,6 +42,8 @@ class BlogForm extends React.Component {
     const { title, body, author } = this.state;
 
     return (
+      <>
+      <Header />
       <div className="col-12 col-lg-6 offset-lg-3">
         <input
           onChange={(ev) => this.handleChangeField('title', ev)}
@@ -61,6 +65,8 @@ class BlogForm extends React.Component {
         />
         <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit Yoself</button>
       </div>
+      <Footer />
+      </>
     )
   }
 }

@@ -5,9 +5,13 @@ import {
   Card, Button, CardImg, CardTitle, CardText, CardDeck,
   CardSubtitle, CardBody, Container
 } from 'reactstrap';
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const About = (props) => {
   return (
+    <>
+    <Header/>
     <Container>
       <div className="text-center">
         <h1>Our Company</h1>
@@ -64,8 +68,9 @@ const About = (props) => {
         </CardBody>
       </Card>
     </CardDeck>
-
     </Container>
+    <Footer />
+    </>
   );
 };
 

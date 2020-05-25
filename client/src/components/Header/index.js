@@ -9,12 +9,20 @@ import {
   NavItem,
   NavLink,
 } from 'reactstrap';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
 
+import { logOutUser } from '../../store/actions/authActions';
 
-const Header = (props) => {
+const Header = ({auth, logOutUser }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
+
+  const handleLogout = () => {
+    console.log("logging out");
+    logOutUser();
+  }
 
   return (
     <div className="header">
@@ -33,14 +41,21 @@ const Header = (props) => {
               <NavLink id="aboutLink" className="link" href="/joblistings">Job Listings</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink className="link" href="/login">Login</NavLink>
+              {
+                ! auth.token ?
+                <NavLink className="link" href="/login">Login</NavLink> : 
+                <NavLink style={{cursor:"pointer"}} className="link" onClick={handleLogout}>Logout</NavLink>
+              }
             </NavItem>
           </Nav>
         </Collapse>
       </Navbar>
-      
     </div>
   );
 };
 
-export default Header;
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+});
+
+export default compose(connect(mapStateToProps, { logOutUser }))(Header);
