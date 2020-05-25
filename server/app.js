@@ -39,6 +39,8 @@ require('./models/Articles');
 
 // Add routes
 app.use(require("./routes"));
+//JOBLISTING ROUTES
+app.use('/api/jobs', require('./routes/api/jobs'));
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
