@@ -5,12 +5,12 @@ import { connect } from 'react-redux';
 import Cookies from 'js-cookie';
 import { logInUserWithOauth, loadMe } from './store/actions/authActions';
 
+import BlogHome from './Pages/BlogHome';
 import BlogForm from './components/BlogComponents/BlogArticle/BlogForm';
 import Home from './Pages/Home';
-// import BlogArticle from './pages/BlogArticle/Form';
-import BlogHome from './Pages/BlogHome';
 import About from './Pages/About';
 import Login from "./Pages/Login";
+import JobListingPage from './Pages/JobListings';
 import Register from './Pages/Register';
 import Loader from './components/Loader/Loader';
 
@@ -48,15 +48,8 @@ const App = ({ logInUserWithOauth, auth, loadMe }) => {
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
+            <Route exact path="/jobs" component={JobListingPage} />
           </div>
-          {/* 
-            <Route exact path="/joblistings" component={JobListings} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/blogpost" component={BlogArticle} />
-            <Route exact path="/bloghome" component={BlogHome} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/joblistings" component={JobListings} />
-          */}
         </Router>
           ) : (
         <Loader />

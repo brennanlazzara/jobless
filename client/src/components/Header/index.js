@@ -38,7 +38,7 @@ const Header = ({auth, logOutUser }) => {
               <NavLink id="aboutLink" className="link" href="/blog">Blog</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink id="aboutLink" className="link" href="/joblistings">Job Listings</NavLink>
+              <NavLink id="aboutLink" className="link" href="/jobs">Job Listings</NavLink>
             </NavItem>
             <NavItem>
               {
