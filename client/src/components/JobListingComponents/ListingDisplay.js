@@ -1,6 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 const JobListing = () => {
+
+    const {
+      id,       
+      company,
+      location,
+      title,
+      description,
+      company_logo,
+      how_to_apply,
+      created_at } = this.props.job;
+
   return (
     <table>
       <container style={{ marginLeft: "10px" }}>
@@ -12,7 +23,7 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Company</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{company}</td>
               </div>
             </tr>
 
@@ -21,7 +32,7 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Location</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{location}</td>
               </div>
             </tr>
 
@@ -30,7 +41,7 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Job Title</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{title}</td>
               </div>
             </tr>
 
@@ -39,16 +50,16 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Description</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{description}</td>
               </div>
             </tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Description</th>
+                <th style={{ fontWeight: "bold" }}>How To Apply</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{how_to_apply}</td>
               </div>
             </tr>
 
@@ -57,7 +68,7 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Company Logo</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{company_logo}</td>
               </div>
             </tr>
 
@@ -66,7 +77,7 @@ const JobListing = () => {
                 <th style={{ fontWeight: "bold" }}>Posted Date</th>
               </div>
               <div>
-                <td>api data</td>
+                <td>{created_at}</td>
               </div>
             </tr>
 

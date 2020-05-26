@@ -10,6 +10,7 @@ router.get('/', async (req, res) => {
     );
 
     console.log(jobs);
+    // res.json(jobs)
 
     res.send(CircularJSON.stringify(jobs));
   } catch (error) {
