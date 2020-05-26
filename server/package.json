@@ -4,9 +4,12 @@
   "description": "serverside is the best side",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "node app.js",
+    "start:dev": "concurrently -n \"server,client\" -c \"red,green\" \"nodemon --ignore '../client/*'\" \"npm run client\"",
+    "client": "cd ../client && npm run start",
+    "install": "cd ../client && npm install",
+    "build": "cd ../client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +35,7 @@
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
+    "concurrently": "^4.1.2",
     "nodemon": "^2.0.4"
   }
 }
