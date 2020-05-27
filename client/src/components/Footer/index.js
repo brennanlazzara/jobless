@@ -1,6 +1,11 @@
 import React from "react";
 import "./style.css";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+
 function index() {
     
     return (
@@ -9,7 +14,9 @@ function index() {
     <div className="container">
       <div className="row" style={{height: 64}}>
         <div className="col-sm-6 col-md-3 item" style={{height: 64, minHeight: 4}}><img src="assets/img/128logo.png" width="128px" height="128px" style={{width: 64, height: 64}} /></div>
-        <div className="col item social" style={{height: 64, marginTop: 0}}><a href="https://github.com/BrennanPredmore/jobless"><i className="fab fa-github-alt" /></a><a href="https://www.linkedin.com/company/joblesscareerdev"><i className="fab fa-linkedin-in" /></a></div>
+        <div className="col item social" style={{height: 64, marginTop: 0}}>
+          <a href="https://github.com/BrennanPredmore/jobless"><FontAwesomeIcon icon={faGithubAlt} /></a>
+        <a href="https://www.linkedin.com/company/joblesscareerdev"><FontAwesomeIcon icon={faLinkedin} /></a></div>
         <div className="col-sm-6 col-md-3 item" style={{height: 64, minHeight: 64}}>
           <h3 style={{marginBottom: 0}}>Services</h3>
           <ul>
