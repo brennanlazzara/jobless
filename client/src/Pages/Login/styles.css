@@ -1,27 +1,195 @@
-.login {
-  display: flex;
-  justify-content: center;
+
+
+#login-box {
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 25px !important;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  -webkit-box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
+  box-shadow: 0px 6px 30px rgba(0,0,0,0.2);
 }
 
-.login .container {
-  max-width: 400px;
-  flex: 1;
+
+
+
+
+.login-box-header {
+  background-color: rgb(255,255,255);
+  text-align: center;
+  padding-top: 18px;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  padding-left: 25px;
 }
 
-.login .fb {
-  background-color: #3b5998;
+.login-box-header {
+  border: none;
+  border-bottom: 1px solid rgb(224,224,224);
+}
+
+.login-box-content {
+  margin-left: 26%;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  padding-top: 20px;
+}
+
+.social-login-link {
+
+  font-family: 'Roboto', cursive;
+  text-decoration: none;
   color: white;
-  width: 200px;
-  display: block;
+  margin-top: 10px;
 }
 
-.login .google {
-  background-color: #dd4b39;
+
+
+.gp-login {
+  background-color: #4285F4 !important;
+  font-family: 'Roboto', cursive;
+  margin-top: 10px;
+  border: 0px solid #4285F4;
+  width: 240px;
+}
+
+.login-box-content i {
+  padding: 11px 0px 11px 15px;
   color: white;
-  width: 200px;
-  display: block;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 18px;
 }
 
-.login .logins {
-  margin: 5px 0;
+.box-shadow {
+  box-shadow: 0 2px 2px 0 rgba(41,48,59,.24), 0 0 2px 0 rgba(41,48,59,.12);
+  border-radius: 5px;
 }
+
+.social-login-link:hover {
+  text-decoration: none;
+  font-family: 'Roboto', cursive;
+  width: 240px;
+  color: white;
+  border: 0px solid #4285F4;
+}
+
+.login-box-seperator {
+  flex: 1 0 auto;
+  min-width: 1px;
+  border-top: 1px solid #dedfe0;
+  height: 1px;
+}
+
+.email-imput {
+  border-radius: 5px;
+  color: #29303b;
+  font-size: 18px;
+  height: auto;
+  padding: 11px 10px 12px 40px;
+}
+
+.form-control {
+  box-shadow: none;
+  font-size: 16px;
+  padding: 10px 12px;
+  transition: border-color .08s ease-in-out,box-shadow .08s ease-in-out;
+}
+
+.email-login {
+  padding: 10px 20px;
+}
+
+#submit-id-submit {
+  margin-top: 0px;
+    height: 46px;
+    background-color: #1a8f2a;
+    border: 0;
+    color: rgb(255,255,255);
+    margin-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin-left: 26%;
+    width: 227px;
+}
+
+.submit-row {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+.label-text {
+  color: #8b8b8b;
+}
+
+#forgot-password-link {
+  color: #2474c1;
+  text-decoration: none;
+}
+
+#login-box-footer {
+  text-align: center;
+  border-top: 1px solid #dedfe0;
+}
+
+#register-link {
+  color: #2474c1;
+  padding: 0px 10px;
+  text-decoration: none;
+}
+
+#login-box-footer p {
+  color: #8b8b8b;
+}
+
+#submit-id-submit:hover {
+  background-color: #127c24;
+}
+
+
+
+.google-btn {
+  width: 184px;
+  height: 42px;
+  background-color: #4285f4;
+  border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,.25);
+}
+  
+  .google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    background-color: #fff;
+  }
+  .google-icon {
+    position: absolute;
+    margin-top: 11px;
+    margin-left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+  .btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    font-family: "Roboto";
+  }
+.btn-text :hover {
+    box-shadow: 0 0 6px #4285f4;
+  }
+  .btn-text :active {
+    background: #1669F2;
+  }
+ 
+
+ 
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);

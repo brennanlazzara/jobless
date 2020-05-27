@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 
 import { useFormik } from 'formik';
 
@@ -7,8 +7,10 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import _ from 'lodash';
 
+
+
 import { loginUserWithEmail } from '../../store/actions/authActions';
-import { FACEBOOK_AUTH_LINK, GOOGLE_AUTH_LINK } from '../../constants';
+import { GOOGLE_AUTH_LINK } from '../../constants';
 import { loginSchema } from './validation';
 import './styles.css';
 
@@ -27,32 +29,37 @@ const Login = ({ auth, history, loginUserWithEmail }) => {
   if (auth.isAuthenticated) return <Redirect to="/" />;
 
   return (
-    <div className="login">
-      <div className="container">
-        <h1>Log in page</h1>
-        <p>
-          back to{' '}
-          <Link className="bold" to="/">
-            Home page
-          </Link>
-        </p>
-        <form onSubmit={formik.handleSubmit}>
-          <h2>Log in with social media</h2>
-          {/* <a className="fb btn" href={FACEBOOK_AUTH_LINK}>
-            <i className="fa fa-facebook fa-fw" /> Login with Facebook
-          </a> */}
-          <a className="google btn" href={GOOGLE_AUTH_LINK}>
-            <i className="fa fa-google fa-fw" />
-            Login with Google
-          </a>
-          <h2>Login with email address</h2>
-          <p className="logins">Admin: email0@email.com 123456789</p>
-          <p className="logins">User: email1@email.com 123456789</p>
-          <div>
-            <input
-              placeholder="Email address"
+    <div className="container" style={{paddingTop: '7%'}}> 
+  <div className="d-flex flex-column justify-content-center" id="login-box">
+  {' '}
+    <form onSubmit={formik.handleSubmit}>
+      <div />
+      <div className="login-box-header">
+        <h4 style={{color: 'rgb(139,139,139)', marginBottom: 0, fontWeight: 400, fontSize: 37}}>Login</h4>
+        <a href="/" style={{textDecoration: 'none'}}>Home</a>
+      </div>
+      <div className="login-box-content">
+      <a href={GOOGLE_AUTH_LINK}>
+      <div className="google-btn">
+  <div className="google-icon-wrapper">
+    <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+  </div>
+  <p className="btn-text"><a  style={{color: 'white', textDecoration: 'none'}}>
+        Signin with Google</a></p>
+</div></a>
+
+      </div>
+      <div className="d-flex flex-row align-items-center login-box-seperator-container">
+        <div className="login-box-seperator" />
+        <div className="login-box-seperator-text">
+          <p style={{marginBottom: 0, paddingLeft: 10, paddingRight: 10, fontWeight: 400, color: 'rgb(201,201,201)'}}>or</p>
+        </div>
+        <div className="login-box-seperator" />
+      </div>
+      <div className="email-login" style={{backgroundColor: '#ffffff'}}>
+          <input className="text form-control email-imput form-control"style={{marginTop: 10}}  
               name="email"
-              className="text"
+              placeholder="Email" minLength={6}
               type="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
@@ -61,38 +68,105 @@ const Login = ({ auth, history, loginUserWithEmail }) => {
             {formik.touched.email && formik.errors.email ? (
               <p className="error">{formik.errors.email}</p>
             ) : null}
-            <input
+             <input
+              className="text form-control password-input form-control" 
+              type="password" style={{marginTop: 10}}
               placeholder="Password"
               name="password"
-              type="password"
-              className="text"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-            {formik.touched.password && formik.errors.password ? (
-              <p className="error">{formik.errors.password}</p>
-            ) : null}
-          </div>
-          {auth.error && <p className="error">{auth.error}</p>}
-          <div>
-            <button
-              className="btn submit"
-              disabled={auth.isLoading || !formik.isValid}
-              type="submit"
-            >
-              Log in now
-            </button>
-          </div>
-          <div>
-            Don't have an account?{' '}
-            <Link className="bold" to="/register">
-              Register
-            </Link>
-          </div>
-        </form>
+              value={formik.values.password} />
+              {formik.touched.password && formik.errors.password ? (
+                <p className="error">{formik.errors.password}</p>
+              ) : null}
+            </div>
+            {auth.error && <p className="error">{auth.error}</p>}
+            <div className="submit-row" style={{marginBottom: 8, paddingTop: 0}} />
+      <div className="submit-row" style={{marginBottom: 8, paddingTop: 0}}>
+        <button 
+        disabled={auth.isLoading || !formik.isValid}
+        className="btn btn-primary btn-block box-shadow" 
+        id="submit-id-submit"
+         type="submit">
+          Login in Now
+          </button>
+          <div className="d-flex justify-content-between" />
       </div>
-    </div>
+      <div id="login-box-footer" style={{padding: '10px 20px', paddingBottom: 23, paddingTop: 18}}>
+        <p style={{marginBottom: 0}}>Don't you have an account?<a id="register-link" href="/register">Sign Up!</a></p>
+      </div>
+    </form>
+  </div>
+</div>
+
+  
+  
+    // <div className="login">
+    //   <div className="container">
+    //     <h1>Log in page</h1>
+    //     <p>
+    //       back to{' '}
+    //       <Link className="bold" to="/">
+    //         Home page
+    //       </Link>
+    //     </p>
+    //     <form onSubmit={formik.handleSubmit}>
+    //       <h2>Log in with social media</h2>
+    //       {/* <a className="fb btn" href={FACEBOOK_AUTH_LINK}>
+    //         <i className="fa fa-facebook fa-fw" /> Login with Facebook
+    //       </a> */}
+    //       <a className="google btn" href={GOOGLE_AUTH_LINK}>
+    //         <i className="fa fa-google fa-fw" />
+    //         Login with Google
+    //       </a>
+    //       <h2>Login with email address</h2>
+    //       <p className="logins">Admin: email0@email.com 123456789</p>
+    //       <p className="logins">User: email1@email.com 123456789</p>
+    //       <div>
+    //         <input
+    //           placeholder="Email address"
+    //           name="email"
+    //           className="text"
+    //           type="text"
+    //           onChange={formik.handleChange}
+    //           onBlur={formik.handleBlur}
+    //           value={formik.values.email}
+    //         />
+    //         {formik.touched.email && formik.errors.email ? (
+    //           <p className="error">{formik.errors.email}</p>
+    //         ) : null}
+    //         <input
+    //           placeholder="Password"
+    //           name="password"
+    //           type="password"
+    //           className="text"
+    //           onChange={formik.handleChange}
+    //           onBlur={formik.handleBlur}
+    //           value={formik.values.password}
+    //         />
+    //         {formik.touched.password && formik.errors.password ? (
+    //           <p className="error">{formik.errors.password}</p>
+    //         ) : null}
+    //       </div>
+    //       {auth.error && <p className="error">{auth.error}</p>}
+    //       <div>
+    //         <button
+    //           className="btn submit"
+    //           disabled={auth.isLoading || !formik.isValid}
+    //           type="submit"
+    //         >
+    //           Log in now
+    //         </button>
+    //       </div>
+    //       <div>
+    //         Don't have an account?{' '}
+    //         <Link className="bold" to="/register">
+    //           Register
+    //         </Link>
+    //       </div>
+    //     </form>
+    //   </div>
+    // </div>
   );
 };
 
@@ -102,3 +176,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default compose(withRouter, connect(mapStateToProps, { loginUserWithEmail }))(Login);
+
+
