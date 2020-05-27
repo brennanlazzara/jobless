@@ -15,7 +15,6 @@ const BlogHome = props => {
     axios('/api/articles')
       .then((res) => {
         onLoad(res.data)
-        console.log(res)
       })
   }, []);
 
@@ -34,7 +33,7 @@ const BlogHome = props => {
 
 
   const { articles } = props;
-  console.log(articles)
+
 
 
   if (articles.length === 0) {

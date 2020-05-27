@@ -10,9 +10,9 @@ const JobListingPage = () => {
 
      axios.get('http://localhost:8000/api/jobs')
      .then((res) => {
-      console.log(res.data.data)
+
       setJobData(res.data.data)
-      console.log(jobData)
+
     }); 
   
     },[]

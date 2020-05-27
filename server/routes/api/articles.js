@@ -36,7 +36,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/', async (req, res, next) => {
     const response = await Articles.find();
-    console.log(response)
+    
     return res.json(response)
 });
 

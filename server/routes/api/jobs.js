@@ -9,8 +9,7 @@ router.get('/', async (req, res) => {
       'https://jobs.github.com/positions.json?page=1&search=code',
     );
 
-    // console.log(jobs);
-    // res.json(jobs)
+
 
     res.send(CircularJSON.stringify(jobs));
   } catch (error) {

@@ -20,7 +20,6 @@ const Header = ({ auth, logOutUser }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const handleLogout = () => {
-    console.log('logging out');
     logOutUser();
   };
 
