@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
+import Parser from 'html-react-parser';
+
 
 const JobListing = ({job}) => {
 
@@ -11,35 +13,35 @@ const JobListing = ({job}) => {
       description,
       company_logo,
       how_to_apply,
-      created_at } = job;
+      created_at } = (job);
 
   return (
     <table>
-      <container style={{ marginLeft: "10px" }}>
+      <container style={{marginLeft: "10px" }}>
         <thead>
           <tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Company</th>
-              </div>
-              <div>
-                <td>{company}</td>
+                <td><h2>{company}</h2></td>
               </div>
             </tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Location</th>
-              </div>
-              <div>
-                <td>{location}</td>
+                <img style={{width: '35px'}} src={company_logo}></img>
               </div>
             </tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Job Title</th>
+                <td><h4>{location}</h4></td>
+              </div>
+            </tr>
+
+            <tr>
+              <div>
+                <th style={{ fontWeight: "bold" }}>Job Title:</th>
               </div>
               <div>
                 <td>{title}</td>
@@ -48,34 +50,25 @@ const JobListing = ({job}) => {
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Description</th>
+                <th style={{ fontWeight: "bold" }}>Description:</th>
               </div>
               <div>
-                <td>{description}</td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <th style={{ fontWeight: "bold" }}>How To Apply</th>
-              </div>
-              <div>
-                <td>{how_to_apply}</td>
+                <td> {Parser(description)}</td>
               </div>
             </tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Company Logo</th>
+                <th style={{ fontWeight: "bold" }}>How To Apply:</th>
               </div>
               <div>
-                <td>{company_logo}</td>
+                <td>{Parser(how_to_apply)}</td>
               </div>
             </tr>
 
             <tr>
               <div>
-                <th style={{ fontWeight: "bold" }}>Posted Date</th>
+                <th style={{ fontWeight: "bold" }}>Posted Date:</th>
               </div>
               <div>
                 <td>{created_at}</td>
@@ -84,6 +77,7 @@ const JobListing = ({job}) => {
 
           </tr>
         </thead>
+        <hr/>
       </container>
     </table>
   );
