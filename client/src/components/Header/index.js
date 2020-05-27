@@ -20,13 +20,14 @@ const Header = ({ auth, logOutUser }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   const handleLogout = () => {
+    console.log('logging out');
     logOutUser();
   };
 
   return (
     <div className='header'>
-      <Navbar expand='md'>
-        <NavbarBrand href='/'>
+      <Navbar expand='md' style={{ top:-20 }}>
+        <NavbarBrand href='/' >
           <img src='/assets/HEADERLOGO.png' alt='logo'></img>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
