@@ -27,7 +27,7 @@ export const editUser = (id, formData, history) => async (dispatch, getState) =>
       type: EDIT_USER_SUCCESS,
       payload: { user: response.data.user },
     });
-    // edited him self, reload me
+
     if (getState().auth.me?.id === response.data.user.id) dispatch(loadMe());
     history.push(`/${response.data.user.username}`);
   } catch (err) {
@@ -70,7 +70,7 @@ export const deleteUser = (id, history) => async (dispatch, getState) => {
     const options = attachTokenToHeaders(getState);
     const response = await axios.delete(`/api/users/${id}`, options);
 
-    //logout only if he deleted himself
+
     if (getState().auth.me.id === response.data.user.id) {
       dispatch(logOutUser(id, history));
     }

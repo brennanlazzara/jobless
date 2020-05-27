@@ -5,7 +5,7 @@ import Header from "../../../Header";
 import Footer from "../../../Footer";
 
 class BlogForm extends React.Component {
-  // convert these to a functional component
+
   constructor(props) {
     super(props);
 

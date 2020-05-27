@@ -75,7 +75,7 @@ export default function (state = initialState, { type, payload }) {
         me: null,
         isAuthenticated: false,
         isLoading: false,
-        error: null, //payload message ovde i razdvoj logout i fail
+        error: null, 
       };
     default:
       return state;

@@ -15,7 +15,6 @@ const isProduction = process.env.NODE_ENV === 'production';
 mongoose.promise = global.Promise;
 mongoose.set('debug', true);
 
-// CONNECT DATABASE
 connectDB();
 
 app.use(cors());
@@ -34,12 +33,10 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
-// Add models
+
 require('./models/Articles');
 
-// Add routes
 app.use(require("./routes"));
-//JOBLISTING ROUTES
 app.use('/api/jobs', require('./routes/api/jobs'));
 
 app.use((req, res, next) => {

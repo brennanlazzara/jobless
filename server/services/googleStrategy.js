@@ -5,7 +5,7 @@ const User = require('../models/User');
 
 const serverUrl = process.env.NODE_ENV === 'production' ? process.env.SERVER_URL_PROD : process.env.SERVER_URL_DEV;
 
-// google strategy
+
 const googleLogin = new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,

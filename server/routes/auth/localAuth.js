@@ -56,7 +56,7 @@ router.post('/register', async (req, res, next) => {
         if (err) throw err;
         res.json({
           message: 'Register success.'
-        }); // just redirect to login
+        }); 
       });
     } catch (err) {
       return next(err);
@@ -66,7 +66,7 @@ router.post('/register', async (req, res, next) => {
   }
 });
 
-// logout
+
 router.get('/logout', (req, res) => {
   req.logout();
   res.send(false);

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
-// import { BlogForm } from '../components/BlogComponents/BlogArticle';
 import Spinner from '../../components/BlogComponents/Spinner/Spinner';
 import { Link } from 'react-router-dom';
 import Header from "../../components/Header";

@@ -20,7 +20,7 @@ const App = ({ logInUserWithOauth, auth, loadMe }) => {
     loadMe();
   }, [loadMe]);
 
-  //redosled hookova
+ 
   useEffect(() => {
     if (window.location.hash === '#_=_') window.location.hash = '';
 
@@ -32,7 +32,7 @@ const App = ({ logInUserWithOauth, auth, loadMe }) => {
   }, []);
 
   useEffect(() => {
-    if (!auth.appLoaded && !auth.isLoading && auth.token && !auth.isAuthenticated) { //  && !auth.isAuthenticated 
+    if (!auth.appLoaded && !auth.isLoading && auth.token && !auth.isAuthenticated) { 
       loadMe();
     }
   }, [auth.isAuthenticated, auth.token, loadMe, auth.isLoading, auth.appLoaded]);

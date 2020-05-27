@@ -40,13 +40,13 @@ const userSchema = new Schema(
     avatar: String,
     role: { type: String, default: 'USER' },
     bio: String,
-    // google
+
     googleId: {
       type: String,
       unique: true,
       sparse: true,
     },
-    // fb
+
     facebookId: {
       type: String,
       unique: true,
@@ -60,7 +60,7 @@ const userSchema = new Schema(
 console.log(join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH));
 
 userSchema.methods.toJSON = function () {
-  // if not exists avatar1 default
+
   const absoluteAvatarFilePath = `${join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH)}${this.avatar}`;
   const avatar = isValidUrl(this.avatar)
     ? this.avatar
@@ -103,7 +103,7 @@ userSchema.methods.registerUser = (newUser, callback) => {
       if (err) {
         console.log(err);
       }
-      // set pasword to hash
+
       newUser.password = hash;
       newUser.save(callback);
     });
@@ -116,8 +116,6 @@ userSchema.methods.comparePassword = function (candidatePassword, callback) {
     callback(null, isMatch);
   });
 };
-
-// const delay = (t, ...vs) => new Promise(r => setTimeout(r, t, ...vs)) or util.promisify(setTimeout)
 
  async function hashPassword(password) {
   const saltRounds = 10;
