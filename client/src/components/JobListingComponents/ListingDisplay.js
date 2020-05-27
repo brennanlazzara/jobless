@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
 
-const JobListing = () => {
+const JobListing = ({job}) => {
 
     const {
       id,       
@@ -10,7 +11,7 @@ const JobListing = () => {
       description,
       company_logo,
       how_to_apply,
-      created_at } = this.props.job;
+      created_at } = job;
 
   return (
     <table>
@@ -88,4 +89,8 @@ const JobListing = () => {
   );
 }
 
-export default JobListing
+JobListing.propTypes = {
+  job: PropTypes.object.isRequired
+};
+
+export default JobListing;

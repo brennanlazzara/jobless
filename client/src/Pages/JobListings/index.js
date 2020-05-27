@@ -10,24 +10,27 @@ const JobListingPage = () => {
 
      axios.get('http://localhost:8000/api/jobs')
      .then((res) => {
-      console.log(res.data)
-      setJobData(res.data);
-    }) 
+      console.log(res.data.data)
+      setJobData(res.data.data)
+      console.log(jobData)
+    }); 
+  
     },[]
 
-    )
+    );
 
     return (
       <div className="App">
         <Header />
-        {jobData && jobData.map((job) => {
+        {jobData.map((job) => {
         return <JobListing job={job}/>
+        
         })};
        
         <Footer />
       </div>
     );
   
-}
+};
 
 export default JobListingPage;
