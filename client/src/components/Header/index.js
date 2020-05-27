@@ -14,39 +14,57 @@ import { connect } from 'react-redux';
 
 import { logOutUser } from '../../store/actions/authActions';
 
-const Header = ({auth, logOutUser }) => {
+const Header = ({ auth, logOutUser }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
 
   const handleLogout = () => {
-    console.log("logging out");
+    console.log('logging out');
     logOutUser();
-  }
+  };
 
   return (
-    <div className="header">
-      <Navbar expand="md">
-        <NavbarBrand href="/"><img src="/assets/HEADERLOGO.png" alt="logo"></img></NavbarBrand>
+    <div className='header'>
+      <Navbar expand='md'>
+        <NavbarBrand href='/'>
+          <img src='/assets/HEADERLOGO.png' alt='logo'></img>
+        </NavbarBrand>
         <NavbarToggler onClick={toggle} />
-        <Collapse  isOpen={isOpen} navbar>
-          <Nav className="ml-auto" navbar>
+        <Collapse isOpen={isOpen} navbar>
+          <Nav className='ml-auto' navbar>
             <NavItem>
-            <NavLink id="aboutLink" className="link" href="/about">About</NavLink>
+              <NavLink id='aboutLink' className='link' href='/about'>
+                About
+              </NavLink>
             </NavItem>
-            <NavItem>
-              <NavLink id="aboutLink" className="link" href="/blog">Blog</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink id="aboutLink" className="link" href="/joblistings">Job Listings</NavLink>
-            </NavItem>
-            <NavItem>
-              {
-                ! auth.token ?
-                <NavLink className="link" href="/login">Login</NavLink> : 
-                <NavLink style={{cursor:"pointer"}} className="link" onClick={handleLogout}>Logout</NavLink>
-              }
-            </NavItem>
+            {!auth.token ? (
+              <NavLink className='link' href='/login'>
+                Login
+              </NavLink>
+            ) : (
+              <>
+                <NavItem>
+                  <NavLink id='aboutLink' className='link' href='/blog'>
+                    Blog
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink id='aboutLink' className='link' href='/jobs'>
+                    Job Listings
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    style={{ cursor: 'pointer' }}
+                    className='link'
+                    onClick={handleLogout}
+                  >
+                    Logout
+                  </NavLink>
+                </NavItem>
+              </>
+            )}
           </Nav>
         </Collapse>
       </Navbar>
