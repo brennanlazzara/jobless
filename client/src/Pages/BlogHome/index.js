@@ -43,8 +43,8 @@ const BlogHome = props => {
     <>
     <Header />
     <div className="container">
-      <div className="row pt-5">
-        <div className="col-9 col-lg-6 offset-lg-6">
+      <div className="col pt-5">
+        <div style={{margin: '0 auto'}} className="col-9 col-lg-6 offset-lg-6">
           <h1 className="text-center">Jobless Blog</h1>
         </div>
         <div className="col-3 col-lg-6 offset-lg-6">

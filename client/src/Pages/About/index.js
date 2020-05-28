@@ -35,12 +35,12 @@ const About = (props) => {
         <div className="box">
           <div className="box-img"><img src="assets/img/chris.jpg" alt="Williamson" /></div>
           <div className="box-content">
-            <h4 className="title">CHRIS</h4>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+            <h4 className="title">Christopher Searcy</h4>
+            <p className="description">Chris is a javascript developer with experience in database management and sales</p>
             <ul className="social-links">
-              <li><a href="#"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faBriefcase} /></a></li>
+              <li><a href="https://github.com/ChristopherNeill"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
+              <li><a href="https://www.linkedin.com/in/christopher-searcy-8298b2197/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+              <li><a href="https://christopherneill.github.io/latestportfolio/"><FontAwesomeIcon icon={faBriefcase} /></a></li>
 
             </ul>
           </div>
@@ -50,12 +50,12 @@ const About = (props) => {
         <div className="box">
           <div className="box-img"><img src="assets/img/brennan.jpg" alt="Williamson" /></div>
           <div className="box-content">
-            <h4 className="title">brennan<br /></h4>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+            <h4 className="title">Brennan Predmoré<br /></h4>
+            <p className="description">Brennan is a former music teacher and a graduate of the UT full stack software development bootcamp. He enjoys playing music and skateboarding when hes not software engineering</p>
             <ul className="social-links">
-              <li><a href="#"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faBriefcase} /></a></li>
+              <li><a href="https://github.com/BrennanPredmore"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
+              <li><a href="https://www.linkedin.com/in/brennan-predmor%C3%A9-132306195/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+              <li><a href="https://brennan-predmore-portfolio.herokuapp.com/"><FontAwesomeIcon icon={faBriefcase} /></a></li>
 
             </ul>
           </div>
@@ -65,12 +65,12 @@ const About = (props) => {
         <div className="box">
           <div className="box-img"><img src="assets/img/shawn.jpeg" alt="Williamson" /></div>
           <div className="box-content">
-            <h4 className="title">Shawn<br /></h4>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+            <h4 className="title">Shawn Tschoepe<br /></h4>
+            <p className="description">My name is Shawn. I like to Hike and fly planes.</p>
             <ul className="social-links">
-              <li><a href="#"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faBriefcase} /></a></li>
+              <li><a href="https://github.com/shawn220a"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
+              <li><a href="https://www.linkedin.com/in/shawn-tschoepe-245302195/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+              <li><a href="https://github.com/shawn220a/react-portfolio"><FontAwesomeIcon icon={faBriefcase} /></a></li>
 
             </ul>
           </div>
@@ -82,12 +82,12 @@ const About = (props) => {
         <div className="box">
           <div className="box-img"><img src="assets/img/grant.jpeg" alt="Williamson" /></div>
           <div className="box-content">
-            <h4 className="title">GRant</h4>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+            <h4 className="title">Grant Kyle</h4>
+            <p className="description">After spending a few years in digital marketing, Grant finally decided to take the plunge to the dev side. One of the last remaining native Austinites, Grant spends his free time outdoors when he is not staring at a computer screen.</p>
             <ul className="social-links">
-              <li><a href="#"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faBriefcase} /></a></li>
+              <li><a href="https://github.com/grantkyle"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
+              <li><a href="https://www.linkedin.com/in/grant-kyle-53298711a/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+              <li><a href="https://grants-portfolio.herokuapp.com/"><FontAwesomeIcon icon={faBriefcase} /></a></li>
 
             </ul>
           </div>
@@ -97,12 +97,12 @@ const About = (props) => {
         <div className="box">
           <div className="box-img"><img src="assets/img/tabby.jpeg" alt="Williamson" /></div>
           <div className="box-content">
-            <h4 className="title">Tabitha<br /></h4>
-            <p className="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae libero orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sed vestibulum.</p>
+            <h4 className="title">Tabitha Garcia<br /></h4>
+            <p className="description">Front end web developer goddess. I like to code and party.</p>
             <ul className="social-links">
-              <li><a href="#"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faLinkedin} /></a></li>
-              <li><a href="#"><FontAwesomeIcon icon={faBriefcase} /></a></li>
+              <li><a href="https://github.com/tabby-lab"><FontAwesomeIcon icon={faGithubAlt} /></a></li>
+              <li><a href="https://www.linkedin.com/in/tabbitha-garcia-01164a144/"><FontAwesomeIcon icon={faLinkedin} /></a></li>
+              <li><a href="https://github.com/tabby-lab/Portfolio"><FontAwesomeIcon icon={faBriefcase} /></a></li>
 
             </ul>
           </div>

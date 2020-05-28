@@ -22,6 +22,8 @@ const JobListingPage = () => {
     return (
       <div className="App">
         <Header />
+        <h1 style={{textAlign: "center"}}>Your Next Opportunity Awaits...<hr/></h1>
+        
         {jobData.map((job) => {
         return <JobListing job={job}/>
         
