@@ -4,7 +4,7 @@
   "description": "serverside is the best side",
   "main": "app.js",
   "scripts": {
-    "start:prod": "node app.js",
+    "start": "node app.js",
     "start:dev": "concurrently -n \"server,client\" -c \"red,green\" \"nodemon --ignore './client/*'\" \"npm run client\"",
     "client": "cd ./client && npm run start",
     "install": "cd ./client && npm install",
