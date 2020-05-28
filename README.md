@@ -37,11 +37,23 @@ NODE <br>
 MONGODB
 
 ## Client dependies include:
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "4.3.1",
+    "formik": "^2.1.4",
     "history": "^4.10.1",
+    "html-react-parser": "^0.10.5",
+    "i": "^0.3.6",
     "js-cookie": "^2.2.1",
     "moment": "^2.25.3",
+    "npm": "^6.14.5",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
@@ -53,18 +65,30 @@ MONGODB
     "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "reactstrap": "^8.4.1",
-    "redux": "^4.0.5"
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.29.0"
 
 ## Server depencies include:
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
     "config": "^3.3.1",
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "faker": "^4.1.0",
+    "joi": "^14.3.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.14",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
