@@ -23,7 +23,7 @@ const JobListing = ({job}) => {
 
             <tr>
               <div>
-                <td><h2>{company}</h2></td>
+                <td><h2><b>{company}</b></h2></td>
               </div>
             </tr>
 
