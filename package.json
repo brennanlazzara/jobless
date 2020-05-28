@@ -1,20 +1,48 @@
 {
-  "name": "jobless",
+  "name": "server",
   "version": "1.0.0",
-  "description": "The world is a very strange place right now. COVID-19 is affecting people in many ways across the globe. The United Staes has over 30 million Americans that have filed for unemployment benefits within the past three months, and that number continues to rise everyday. Here at Jobless, we want to help those in need of employment due to COVID-19. We have set up a search for you to find remote and essential employment in to help alleviate unemployment rates during these hard times. Jobless is committed to and passionate about helping finding your next job or career.",
-  "main": "index.js",
+  "description": "serverside is the best side",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:prod": "node app.js",
+    "start:dev": "concurrently -n \"server,client\" -c \"red,green\" \"nodemon --ignore './client/*'\" \"npm run client\"",
+    "client": "cd ./client && npm run start",
+    "install": "cd ./client && npm install",
+    "build": "cd ./client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/BrennanPredmore/jobless.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/BrennanPredmore/jobless/issues"
   },
-  "homepage": "https://github.com/BrennanPredmore/jobless#readme"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
+    "config": "^3.3.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "faker": "^4.1.0",
+    "joi": "^14.3.1",
+    "mongodb": "^3.5.7",
+    "mongoose": "^5.9.14",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth2": "^0.2.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.2",
+    "nodemon": "^2.0.4"
+  }
 }

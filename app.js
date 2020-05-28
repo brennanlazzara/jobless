@@ -33,6 +33,7 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
+app.use(express.static(__dirname + './client/build'));
 
 require('./models/Articles');
 
