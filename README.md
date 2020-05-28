@@ -36,7 +36,7 @@ EXPRESS <br>
 NODE <br>
 MONGODB
 
-## Client dependies include:
+## Client dependencies include:
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
@@ -69,7 +69,7 @@ MONGODB
     "redux-thunk": "^2.3.0",
     "yup": "^0.29.0"
 
-## Server depencies include:
+## Server dependencies include:
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
