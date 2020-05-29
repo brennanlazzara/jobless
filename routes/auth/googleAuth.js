@@ -4,7 +4,9 @@ const passport = require('passport');
 router.get(
   '/google',
   passport.authenticate('google', {
-    scope: ['profile', 'email'],
+     scope: 
+      [ 'https://www.googleapis.com/auth/plus.login',
+      , 'https://www.googleapis.com/auth/plus.profile.emails.read' ] ,
     session: false
   }),
 );
