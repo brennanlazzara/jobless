@@ -33,7 +33,9 @@ if(!isProduction) {
   app.use(errorHandler());
 }
 
-app.use(express.static(__dirname + './client/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 require('./models/Articles');
 
