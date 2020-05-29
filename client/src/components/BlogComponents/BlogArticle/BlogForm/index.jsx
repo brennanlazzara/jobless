@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from "../../../Header";
 import Footer from "../../../Footer";
 
+
 class BlogForm extends React.Component {
 
   constructor(props) {
@@ -43,7 +44,15 @@ class BlogForm extends React.Component {
 
     return (
       <>
-      <Header />
+      <div style={{display: 'none'}}>
+      <Header/>
+      </div>
+      <div style={{textAlign: 'center', display: 'initial'}} className='container'>
+      <h3> Share Your Thoughts </h3>
+      <a href="/blog">
+      <p>Go back to the blog</p>
+      </a>
+      </div>
       <div className="col-12 col-lg-6 offset-lg-3">
         <input
           onChange={(ev) => this.handleChangeField('title', ev)}
@@ -63,9 +72,13 @@ class BlogForm extends React.Component {
           className="form-control my-3"
           placeholder="Article Author"
         />
+        <a href='/blog'>
         <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit Yoself</button>
+        </a>
       </div>
-
+      <div style={{display: 'none'}} >
+      <Footer  />
+      </div>
       </>
     )
   }
