@@ -65,7 +65,7 @@ class BlogForm extends React.Component {
         />
         <button onClick={this.handleSubmit} className="btn btn-primary float-right">Submit Yoself</button>
       </div>
-      <Footer />
+
       </>
     )
   }
