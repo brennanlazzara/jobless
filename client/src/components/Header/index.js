@@ -28,7 +28,7 @@ const Header = ({ auth, logOutUser }) => {
     <div className='header'>
       <Navbar expand='md' style={{ top:-20 }}>
         <NavbarBrand href='/' >
-          <img src='/assets/HEADERLOGO.png' alt='logo'></img>
+          <img src='./assets/HEADERLOGO.png' alt='logo'></img>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
