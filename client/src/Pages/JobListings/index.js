@@ -8,7 +8,7 @@ const JobListingPage = () => {
   const [jobData, setJobData] = useState([])
   useEffect(() => {
 
-     axios.get('http://localhost:8000/api/jobs')
+     axios.get('/api/jobs')
      .then((res) => {
 
       setJobData(res.data.data)
