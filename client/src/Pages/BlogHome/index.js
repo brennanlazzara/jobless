@@ -42,22 +42,22 @@ const BlogHome = props => {
   return (
     <>
     <Header />
-    <div className="container">
-      <div className="col pt-5">
-        <div style={{margin: '0 auto'}} className="col-9 col-lg-6 offset-lg-6">
-          <h1 className="text-center">Jobless Blog</h1>
-        </div>
-        <div className="col-3 col-lg-6 offset-lg-6">
-          <Link to='/blog/post' className="">Create New Post</Link>
-        </div>
-        {/* <BlogForm /> */}
-      </div>
+    <div style={{textAlign: 'center', display: 'initial'}} className='container'>
+      
+      <h1> Jobless Blog </h1>
+
+          <a href="/blog/post">
+            <p>Create a post</p>
+          </a>
+
+    </div>
+
       <div className="row pt-5">
         <div className="col-12 col-lg-6 offset-lg-3">
           {articles.map((article) => {
             return (
               <div className="card my-3">
-                <div className="card-header">
+                <div style={{fontWeight: 'bold', textAlign: 'center'}} className="card-header">
                   {article.title}
                 </div>
                 <div className="card-body">
@@ -69,7 +69,7 @@ const BlogHome = props => {
                     <button onClick={() => handleEdit(article)} className="btn btn-primary mx-3">
                       Edit
                       </button>
-                    <button onClick={() => handleDelete(article._id)} className="btn btn-danger">
+                    <button style={{marginLeft: '71.5%'}} onClick={() => handleDelete(article._id)} className="btn btn-danger">
                       Delete
                       </button>
                   </div>
@@ -80,7 +80,6 @@ const BlogHome = props => {
           })}
         </div>
       </div>
-    </div>
     <Footer />
     </>
   );
