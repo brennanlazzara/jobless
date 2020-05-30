@@ -20,7 +20,7 @@ router.get(
   (req, res) => {
     const token = req.user.generateJWT();
     res.cookie('x-auth-cookie', token);
-    res.redirect(clientUrl);
+    res.redirect('https://jobless2020.herokuapp.com/');
   },
 );
 
