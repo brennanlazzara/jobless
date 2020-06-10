@@ -1,12 +1,13 @@
 import React from 'react';
 import { Row, Col, Card, Button, CardBody, CardText } from 'reactstrap';
 import "./style.css";
+import Chart from '../../Chart';
 
 const Bottom = (props) => {
   return (
 
     <Row>
-      <Col className="col-sm-6 mt-5" ><img src="./assets/jobless3.jpeg" style={{ width: "100%" }} className="shadow-lg mb-5 rounded" alt="Bottom" />
+      <Col className="col-sm-6 mt-5" ><Chart style={{ width: "100%" }} className="shadow-lg mb-5 rounded" alt="Bottom" />
       </Col>
       <Col className="col-sm-6 mt-5">
         <Card className="shadow-lg mb-5 rounded">

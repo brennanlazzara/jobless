@@ -42,6 +42,9 @@ require('./models/Articles');
 app.use(require("./routes"));
 app.use('/api/jobs', require('./routes/api/jobs'));
 
+// chart api
+require('./routes/apiRoutes')(app);
+
 app.use((req, res, next) => {
   const err = new Error('Not Found');
   err.status = 404;
