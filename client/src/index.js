@@ -20,16 +20,16 @@ const store = createStore(
     applyMiddleware(thunk),
     (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ &&
       window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__()) ||
-      compose,
-  ),
+      compose
+  )
 );
 
 ReactDOM.render(
   <Provider store={store}>
     <Router history={createHistory()}>
-        <Switch>
-          <Route path="/" component={App} />
-        </Switch>
+      <Switch>
+        <Route path='/' component={App} />
+      </Switch>
     </Router>
   </Provider>,
   document.getElementById('root')

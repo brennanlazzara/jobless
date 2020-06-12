@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { attachTokenToHeaders } from './authActions';
 import {
   GET_PROFILE_LOADING,
@@ -15,7 +14,10 @@ import {
 
 import { logOutUser, loadMe } from './authActions';
 
-export const editUser = (id, formData, history) => async (dispatch, getState) => {
+export const editUser = (id, formData, history) => async (
+  dispatch,
+  getState
+) => {
   dispatch({
     type: EDIT_USER_LOADING,
   });
@@ -69,7 +71,6 @@ export const deleteUser = (id, history) => async (dispatch, getState) => {
   try {
     const options = attachTokenToHeaders(getState);
     const response = await axios.delete(`/api/users/${id}`, options);
-
 
     if (getState().auth.me.id === response.data.user.id) {
       dispatch(logOutUser(id, history));

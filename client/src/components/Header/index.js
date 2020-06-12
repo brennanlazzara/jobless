@@ -26,8 +26,8 @@ const Header = ({ auth, logOutUser }) => {
 
   return (
     <div className='header'>
-      <Navbar expand='md' style={{ top:-20 }}>
-        <NavbarBrand href='/' >
+      <Navbar expand='md' style={{ top: -20 }}>
+        <NavbarBrand href='/'>
           <img src='/assets/headerLogo.png' alt='logo'></img>
         </NavbarBrand>
         <NavbarToggler onClick={toggle} />

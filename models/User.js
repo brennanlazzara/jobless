@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const bcrypt = require('bcryptjs');
-const isValidUrl = require('../utlis/utils').isValidUrl
+const isValidUrl = require('../utlis/utils').isValidUrl;
 
 const { Schema } = mongoose;
 
@@ -54,14 +54,17 @@ const userSchema = new Schema(
     },
     messages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Message' }],
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 console.log(join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH));
 
 userSchema.methods.toJSON = function () {
-
-  const absoluteAvatarFilePath = `${join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH)}${this.avatar}`;
+  const absoluteAvatarFilePath = `${join(
+    __dirname,
+    '../..',
+    process.env.IMAGES_FOLDER_PATH
+  )}${this.avatar}`;
   const avatar = isValidUrl(this.avatar)
     ? this.avatar
     : fs.existsSync(absoluteAvatarFilePath)
@@ -82,7 +85,9 @@ userSchema.methods.toJSON = function () {
 };
 
 const isProduction = process.env.NODE_ENV === 'production';
-const secretOrKey = isProduction ? process.env.JWT_SECRET_PROD : process.env.JWT_SECRET_DEV;
+const secretOrKey = isProduction
+  ? process.env.JWT_SECRET_PROD
+  : process.env.JWT_SECRET_DEV;
 
 userSchema.methods.generateJWT = function () {
   const token = jwt.sign(
@@ -92,7 +97,7 @@ userSchema.methods.generateJWT = function () {
       provider: this.provider,
       email: this.email,
     },
-    secretOrKey,
+    secretOrKey
   );
   return token;
 };
@@ -117,7 +122,7 @@ userSchema.methods.comparePassword = function (candidatePassword, callback) {
   });
 };
 
- async function hashPassword(password) {
+async function hashPassword(password) {
   const saltRounds = 10;
 
   const hashedPassword = await new Promise((resolve, reject) => {
@@ -130,7 +135,7 @@ userSchema.methods.comparePassword = function (candidatePassword, callback) {
   return hashedPassword;
 }
 
- const validateUser = (user) => {
+const validateUser = (user) => {
   const schema = {
     avatar: Joi.any(),
     name: Joi.string().min(2).max(30).required(),

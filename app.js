@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -7,7 +7,7 @@ const cors = require('cors');
 const errorHandler = require('errorhandler');
 const mongoose = require('mongoose');
 const connectDB = require('./config/connection');
-const passport = require("passport");
+const passport = require('passport');
 const app = express();
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -22,26 +22,32 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({ secret: 'LightBlog', cookie: { maxAge: 60000 }, resave: false, saveUninitialized: false }));
+app.use(
+  session({
+    secret: 'LightBlog',
+    cookie: { maxAge: 60000 },
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use(passport.initialize());
 require('./services/jwtStrategy');
 require('./services/googleStrategy');
 require('./services/localStrategy');
 
-if(!isProduction) {
+if (!isProduction) {
   app.use(errorHandler());
 }
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
 require('./models/Articles');
 
-app.use(require("./routes"));
+app.use(require('./routes'));
 app.use('/api/jobs', require('./routes/api/jobs'));
-
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');

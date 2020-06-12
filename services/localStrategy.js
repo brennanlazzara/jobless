@@ -1,6 +1,6 @@
 const passport = require('passport');
 const Joi = require('joi');
-const LocalStrategy = require("passport-local").Strategy;
+const LocalStrategy = require('passport-local').Strategy;
 const User = require('../models/User');
 const loginSchema = require('./validators').loginSchema;
 
@@ -36,7 +36,7 @@ const passportLogin = new LocalStrategy(
     } catch (err) {
       return done(err);
     }
-  },
+  }
 );
 
 passport.use(passportLogin);

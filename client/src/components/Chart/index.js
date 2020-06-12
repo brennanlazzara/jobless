@@ -68,7 +68,7 @@ class Chart extends Component {
               position: 'top',
               labels: {
                 fontColor: '#000',
-                fontWeight: 'bolder'
+                fontWeight: 'bolder',
               },
             },
             layout: {

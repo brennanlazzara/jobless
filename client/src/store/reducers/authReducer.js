@@ -75,7 +75,7 @@ export default function (state = initialState, { type, payload }) {
         me: null,
         isAuthenticated: false,
         isLoading: false,
-        error: null, 
+        error: null,
       };
     default:
       return state;

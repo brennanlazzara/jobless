@@ -10,35 +10,28 @@ router.post('/login', requireLocalAuth, (req, res) => {
   const me = req.user.toJSON();
   res.json({
     token,
-    me
+    me,
   });
 });
 
 router.post('/register', async (req, res, next) => {
-  const {
-    error
-  } = Joi.validate(req.body, registerSchema);
+  const { error } = Joi.validate(req.body, registerSchema);
   if (error) {
     return res.status(422).send({
-      message: error.details[0].message
+      message: error.details[0].message,
     });
   }
 
-  const {
-    email,
-    password,
-    name,
-    username
-  } = req.body;
+  const { email, password, name, username } = req.body;
 
   try {
     const existingUser = await User.findOne({
-      email
+      email,
     });
 
     if (existingUser) {
       return res.status(422).send({
-        message: 'Email is in use'
+        message: 'Email is in use',
       });
     }
 
@@ -55,8 +48,8 @@ router.post('/register', async (req, res, next) => {
       newUser.registerUser(newUser, (err, user) => {
         if (err) throw err;
         res.json({
-          message: 'Register success.'
-        }); 
+          message: 'Register success.',
+        });
       });
     } catch (err) {
       return next(err);
@@ -65,7 +58,6 @@ router.post('/register', async (req, res, next) => {
     return next(err);
   }
 });
-
 
 router.get('/logout', (req, res) => {
   req.logout();

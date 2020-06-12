@@ -1,11 +1,11 @@
 const passport = require('passport');
-const JwtStrategy = require("passport-jwt").Strategy;
-const ExtractJwt = require("passport-jwt").ExtractJwt;
+const JwtStrategy = require('passport-jwt').Strategy;
+const ExtractJwt = require('passport-jwt').ExtractJwt;
 const User = require('../models/User');
-
 const isProduction = process.env.NODE_ENV === 'production';
-const secretOrKey = isProduction ? process.env.JWT_SECRET_PROD : process.env.JWT_SECRET_DEV;
-
+const secretOrKey = isProduction
+  ? process.env.JWT_SECRET_PROD
+  : process.env.JWT_SECRET_DEV;
 
 const jwtLogin = new JwtStrategy(
   {
@@ -24,7 +24,7 @@ const jwtLogin = new JwtStrategy(
     } catch (err) {
       done(err, false);
     }
-  },
+  }
 );
 
 passport.use(jwtLogin);

@@ -9,5 +9,4 @@ router.use('/users', userRoutes);
 router.use('/jobs', jobListings);
 router.use('/chart', chart);
 
-
 module.exports = router;
