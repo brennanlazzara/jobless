@@ -8,7 +8,7 @@ class Chart extends Component {
   }
 
   getChartData() {
-    axios.get('http://localhost:5001/api/sexUnemployment').then((res) => {
+    axios.get('/api/sexUnemployment').then((res) => {
       const coin = res.data;
       let labels = coin.unique_array;
       let mRate = coin.mRate;
