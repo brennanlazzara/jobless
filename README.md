@@ -1,7 +1,7 @@
 # JOBLESS
 The world is a very strange place right now. COVID-19 is affecting people in many ways across the globe. The United Staes has over 30 million Americans that have filed for unemployment benefits within the past three months, and that number continues to rise everyday. Here at Jobless, we want to help those in need of employment due to COVID-19. We have set up a search for you to find remote and essential employment in to help alleviate unemployment rates during these hard times. Jobless is committed to and passionate about helping finding your next job or career.
 
-![GIF]()
+![GIF](https://media.giphy.com/media/fZEGugb5dgeRd4I9rD/giphy.gif)
 
 ##  This application is composed of two main folders: 
 client & server 
@@ -77,6 +77,7 @@ MONGODB
     "axios": "^0.19.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "chart.js": "^2.9.3",
     "circular-json": "^0.5.9",
     "config": "^3.3.1",
     "cors": "^2.8.5",
@@ -85,6 +86,7 @@ MONGODB
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "faker": "^4.1.0",
+    "if-env": "^1.0.4",
     "joi": "^14.3.1",
     "mongodb": "^3.5.7",
     "mongoose": "^5.9.14",
@@ -92,7 +94,10 @@ MONGODB
     "passport": "^0.4.1",
     "passport-google-oauth2": "^0.2.0",
     "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-chartjs-2": "^2.9.0"
+    "concurrently": "^4.1.2",
+    "nodemon": "^2.0.4"
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
