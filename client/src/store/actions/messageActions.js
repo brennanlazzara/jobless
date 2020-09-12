@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { attachTokenToHeaders } from './authActions';
 import {
   GET_MESSAGES_LOADING,

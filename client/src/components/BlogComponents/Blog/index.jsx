@@ -6,10 +6,9 @@ import { BlogHome } from '../../../pages/bloghome';
 const Blog = (props) => {
   return (
     <Switch>
-      <Route exact path="/blog" component={BlogHome} />
+      <Route exact path='/blog' component={BlogHome} />
     </Switch>
-
-  )
-}
+  );
+};
 
 export default withRouter(Blog);

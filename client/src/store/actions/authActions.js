@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import { getMessages } from './messageActions';
 import {
   LOGIN_WITH_OAUTH_LOADING,
@@ -36,7 +35,10 @@ export const loadMe = () => async (dispatch, getState) => {
   }
 };
 
-export const loginUserWithEmail = (formData, history) => async (dispatch, getState) => {
+export const loginUserWithEmail = (formData, history) => async (
+  dispatch,
+  getState
+) => {
   dispatch({ type: LOGIN_WITH_EMAIL_LOADING });
   try {
     const response = await axios.post('/auth/login', formData);
@@ -78,7 +80,6 @@ export const logInUserWithOauth = (token) => async (dispatch, getState) => {
     });
   }
 };
-
 
 export const logOutUser = (history) => async (dispatch) => {
   try {

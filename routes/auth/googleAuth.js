@@ -5,11 +5,14 @@ router.get(
   '/google',
   passport.authenticate('google', {
     scope: ['profile', 'email'],
-    session: false
-  }),
+    session: false,
+  })
 );
 
-const clientUrl = process.env.NODE_ENV === 'production' ? process.env.CLIENT_URL_PROD : process.env.CLIENT_URL_DEV;
+const clientUrl =
+  process.env.NODE_ENV === 'production'
+    ? process.env.CLIENT_URL_PROD
+    : process.env.CLIENT_URL_DEV;
 
 router.get(
   '/google/callback',
@@ -21,7 +24,7 @@ router.get(
     const token = req.user.generateJWT();
     res.cookie('x-auth-cookie', token);
     res.redirect(clientUrl);
-  },
+  }
 );
 
 module.exports = router;

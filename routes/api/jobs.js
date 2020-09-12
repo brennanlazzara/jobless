@@ -6,10 +6,8 @@ const CircularJSON = require('circular-json');
 router.get('/', async (req, res) => {
   try {
     const jobs = await axios(
-      'https://jobs.github.com/positions.json?page=1&search=code',
+      'https://jobs.github.com/positions.json?page=1&search=code'
     );
-
-
 
     res.send(CircularJSON.stringify(jobs));
   } catch (error) {

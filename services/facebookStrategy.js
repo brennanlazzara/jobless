@@ -2,15 +2,11 @@ const passport = require('passport');
 const Strategy = require('passport-facebook').FacebookStrategy;
 const User = require('../models/User');
 
+const serverUrl =
+  process.env.NODE_ENV === 'production'
+    ? process.env.SERVER_URL_PROD
+    : process.env.SERVER_URL_DEV;
 
-// import passport from 'passport';
-// import { Strategy as FacebookStrategy } from 'passport-facebook';
-
-// import User from '../models/User';
-
-const serverUrl = process.env.NODE_ENV === 'production' ? process.env.SERVER_URL_PROD : process.env.SERVER_URL_DEV;
-
-// facebook strategy
 const facebookLogin = new FacebookStrategy(
   {
     clientID: process.env.FACEBOOK_APP_ID,
@@ -31,7 +27,6 @@ const facebookLogin = new FacebookStrategy(
     ],
   },
   async (accessToken, refreshToken, profile, done) => {
-
     try {
       const oldUser = await User.findOne({ email: profile.emails[0].value });
 
@@ -42,7 +37,6 @@ const facebookLogin = new FacebookStrategy(
       console.log(err);
     }
 
-    // register user
     try {
       const newUser = await new User({
         provider: 'facebook',
@@ -57,7 +51,7 @@ const facebookLogin = new FacebookStrategy(
     } catch (err) {
       console.log(err);
     }
-  },
+  }
 );
 
 passport.use(facebookLogin);

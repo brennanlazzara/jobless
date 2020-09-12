@@ -19,5 +19,5 @@ const registerSchema = Joi.object().keys({
 
 module.exports = {
   loginSchema,
-  registerSchema
-}
+  registerSchema,
+};

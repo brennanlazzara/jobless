@@ -20,7 +20,6 @@ const initialState = {
   error: null,
 };
 
-
 export default function (state = initialState, { type, payload }) {
   switch (type) {
     case GET_MESSAGES_LOADING:
@@ -85,7 +84,8 @@ export default function (state = initialState, { type, payload }) {
         ...state,
         error: null,
         messages: state.messages.map((m) => {
-          if (m.id === payload.id) return { ...m, isLoading: false, error: payload.error };
+          if (m.id === payload.id)
+            return { ...m, isLoading: false, error: payload.error };
           return m;
         }),
       };
@@ -106,7 +106,8 @@ export default function (state = initialState, { type, payload }) {
       return {
         ...state,
         messages: state.messages.map((m) => {
-          if (m.id === payload.id) return { ...m, isLoading: false, error: null };
+          if (m.id === payload.id)
+            return { ...m, isLoading: false, error: null };
           return m;
         }),
       };

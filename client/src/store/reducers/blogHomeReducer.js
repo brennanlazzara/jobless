@@ -1,5 +1,5 @@
-export default (state={articles: []}, action) => {
-  switch(action.type) {
+export default (state = { articles: [] }, action) => {
+  switch (action.type) {
     case 'HOME_PAGE_LOADED':
       return {
         ...state,
@@ -8,7 +8,7 @@ export default (state={articles: []}, action) => {
     case 'SUBMIT_ARTICLE':
       return {
         ...state,
-        articles: ([action.data.article]).concat(state.articles),
+        articles: [action.data.article].concat(state.articles),
       };
     case 'DELETE_ARTICLE':
       return {
@@ -24,15 +24,15 @@ export default (state={articles: []}, action) => {
       return {
         ...state,
         articles: state.articles.map((article) => {
-          if(article._id === action.data.article._id) {
+          if (article._id === action.data.article._id) {
             return {
               ...action.data.article,
-            }
+            };
           }
           return article;
         }),
         articleToEdit: undefined,
-      }
+      };
     default:
       return state;
   }
