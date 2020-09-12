@@ -4,6 +4,7 @@ const ExtractJwt = require("passport-jwt").ExtractJwt;
 const User = require('../models/User');
 
 const isProduction = process.env.NODE_ENV === 'production';
+console.log(process.env.MY_PASSWORD)
 const secretOrKey = isProduction ? process.env.JWT_SECRET_PROD : process.env.JWT_SECRET_DEV;
 
 
