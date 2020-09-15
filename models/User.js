@@ -57,7 +57,7 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-console.log(join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH));
+// console.log(join(__dirname, '../..', process.env.IMAGES_FOLDER_PATH));
 
 userSchema.methods.toJSON = function () {
   const absoluteAvatarFilePath = `${join(
