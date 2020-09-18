@@ -9,6 +9,7 @@
     "start:dev": "concurrently  -n \"server,client\" -c \"red,green\" \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node seed/joblessSeedDB.js",
+    "clientinstall": "npm install --prefix client",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -37,14 +38,14 @@
     "faker": "^4.1.0",
     "if-env": "^1.0.4",
     "joi": "^14.3.1",
-    "mongodb": "^3.5.7",
-    "mongoose": "^5.9.14",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.6",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-google-oauth2": "^0.2.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "react-chartjs-2": "^2.9.0"
+    "react-chartjs-2": "^2.10.0"
   },
   "devDependencies": {
     "concurrently": "^4.1.2",
