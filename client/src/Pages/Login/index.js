@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { withRouter, Redirect, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
@@ -54,9 +54,9 @@ const Login = ({ auth, history, loginUserWithEmail }) => {
                   />
                 </div>
                 <p className='btn-text'>
-                  <a style={{ color: 'white', textDecoration: 'none' }}>
+                  <Link style={{ color: 'white', textDecoration: 'none' }}>
                     Signin with Google
-                  </a>
+                  </Link>
                 </p>
               </div>
             </a>
