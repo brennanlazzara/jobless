@@ -3,7 +3,7 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import _ from 'lodash';
+
 import { loginUserWithEmail } from '../../store/actions/authActions';
 import { GOOGLE_AUTH_LINK } from '../../constants';
 import { loginSchema } from './validation';
