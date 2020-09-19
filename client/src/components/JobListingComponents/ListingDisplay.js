@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Parser from 'html-react-parser';
 
 const JobListing = ({ job }) => {
   const {
-    id,
     company,
     location,
     title,
@@ -31,7 +30,7 @@ const JobListing = ({ job }) => {
 
             <tr>
               <div>
-                <img style={{ width: '35px' }} src={company_logo}></img>
+                <img style={{ width: '35px' }} alt={"companyLogo"} src={company_logo}></img>
               </div>
             </tr>
 
