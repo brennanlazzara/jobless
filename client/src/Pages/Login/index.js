@@ -3,7 +3,6 @@ import { withRouter, Redirect } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-
 import { loginUserWithEmail } from '../../store/actions/authActions';
 import { GOOGLE_AUTH_LINK } from '../../constants';
 import { loginSchema } from './validation';
@@ -50,6 +49,7 @@ const Login = ({ auth, history, loginUserWithEmail }) => {
                 <div className='google-icon-wrapper'>
                   <img
                     className='google-icon'
+                    alt={'google-icon'}
                     src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
                   />
                 </div>
