@@ -36,6 +36,7 @@
     "yup": "^0.29.0"
   },
   "proxy": "http://localhost:8000",
+  "secure": false,
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
