@@ -10,7 +10,7 @@ function Search(props) {
           style={{ textAlign: 'center' }}
           onChange={(e) => props.setFilterText(e.target.value)}
           type='text'
-          placeholder='Filter by company, position, or location  '
+          placeholder='Filter by Company, Position, or Location  '
         />
       </FormGroup>
     </Form>
