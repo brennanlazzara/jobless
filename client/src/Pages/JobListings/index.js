@@ -3,6 +3,7 @@ import JobListing from '../../components/JobListingComponents/ListingDisplay';
 import Header from '../../components/Header/index';
 import Footer from '../../components/Footer';
 import axios from 'axios';
+import Search from '../../components/SearchBar/searchBar'
 
 const JobListingPage = () => {
   const [jobData, setJobData] = useState([]);
@@ -19,6 +20,7 @@ const JobListingPage = () => {
         Your Next Opportunity Awaits...
         <hr />
       </h1>
+      <Search />
       {jobData.map((job) => {
         return <JobListing job={job} />;
       })}
