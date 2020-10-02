@@ -7,7 +7,13 @@ function Search(props) {
       <FormGroup>
         <Label for='exampleEmail'></Label>
         <Input
-          style={{ textAlign: 'center' }}
+          className={'container'}
+          style={{
+            borderColor: '#333',
+            borderStyle: 'grove',
+            borderWidth: '5px',
+            textAlign: 'center',
+          }}
           onChange={(e) => props.setFilterText(e.target.value)}
           type='text'
           placeholder='Filter by Company, Position, or Location  '
