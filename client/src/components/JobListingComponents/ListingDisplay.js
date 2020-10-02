@@ -1,8 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Parser from 'html-react-parser';
+import jobTable from '../jobTable/jobTable';
+import searchBar from '../SearchBar/searchBar';
 
 const JobListing = ({ job }) => {
+  // Declare a new state variable to set all employees
+  const [jobs, setJobs] = useState([]);
+
+  // Declare a new state to filter
+  const [filterText, setFilterText] = useState('');
+  const filteredJobs = jobs.filter((e) => {
+    // By company
+    if (e.company.toLowerCase().includes(filterText.toLowerCase())) {
+      return true;
+    }
+    // By location
+    else if (e.location.toLowerCase().includes(filterText.toLowerCase())) {
+      return true;
+    }
+    // By title
+    else if (e.title.toLowerCase().includes(filterText.toLowerCase())) {
+      return true;
+    }
+    // By description
+    else if (e.description.toLowerCase().includes(filterText.toLowerCase())) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
   const {
     company,
     location,
@@ -13,75 +41,13 @@ const JobListing = ({ job }) => {
     created_at,
   } = job;
 
+  setJobs(job);
+
   return (
-    <table>
-      <container style={{ marginLeft: '10px' }}>
-        <thead>
-          <tr>
-            <tr>
-              <div>
-                <td>
-                  <h2>
-                    <b>{company}</b>
-                  </h2>
-                </td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <img style={{ width: '35px' }} alt={"companyLogo"} src={company_logo}></img>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <td>
-                  <h4>{location}</h4>
-                </td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <th style={{ fontWeight: 'bold' }}>Job Title:</th>
-              </div>
-              <div>
-                <td>{title}</td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <th style={{ fontWeight: 'bold' }}>Description:</th>
-              </div>
-              <div>
-                <td> {Parser(description)}</td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <th style={{ fontWeight: 'bold' }}>How To Apply:</th>
-              </div>
-              <div>
-                <td>{Parser(how_to_apply)}</td>
-              </div>
-            </tr>
-
-            <tr>
-              <div>
-                <th style={{ fontWeight: 'bold' }}>Posted Date:</th>
-              </div>
-              <div>
-                <td>{created_at}</td>
-              </div>
-            </tr>
-          </tr>
-        </thead>
-        <hr />
-      </container>
-    </table>
+    <div className='listingDisplay'>
+      <jobTable jobs={filteredJobs} />
+      <searchBar setFilterText={setFilterText} />
+    </div>
   );
 };
 
