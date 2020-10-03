@@ -1,11 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Parser from 'html-react-parser';
 
 const JobTable = (props) => {
   {
-    props.jobData.map((e) => {
+    props.filteredJobs.map((e) => {
       return (
         <Table>
           <container style={{ marginLeft: '10px' }}>
@@ -84,8 +84,8 @@ const JobTable = (props) => {
   }
 };
 
-// JobTable.propTypes = {
-//   job: PropTypes.object.isRequired,
-// };
+JobTable.propTypes = {
+    filteredJobs: PropTypes.object.isRequired,
+};
 
 export default JobTable;
