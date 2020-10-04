@@ -1,12 +1,11 @@
 import React from 'react';
 import { Table } from 'reactstrap';
-// import PropTypes from 'prop-types';
 import Parser from 'html-react-parser';
 
 const JobTable = (props) => {
   return (
     <Table>
-      {props.jobData.map((e) => {
+      {props.jobData.map((e) => (
         <container style={{ marginLeft: '10px' }}>
           <thead>
             <tr key={e.id.value}>
@@ -76,15 +75,11 @@ const JobTable = (props) => {
             </tr>
           </thead>
           <hr />
-        </container>;
-      })}
+        </container>
+      ))}
       ;
     </Table>
   );
 };
-
-// JobTable.propTypes = {
-//     filteredJobs: PropTypes.object.isRequired,
-// };
 
 export default JobTable;
