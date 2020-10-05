@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Cookies from 'js-cookie';
 import { logInUserWithOauth, loadMe } from './store/actions/authActions';
 import BlogHome from './Pages/BlogHome/BlogHome';
-import BlogForm from './components/BlogComponents/BlogArticle/BlogForm';
+import BlogForm from './components/BlogComponents/BlogArticle/BlogForm/BlogForm';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Login from './Pages/Login/Login';
