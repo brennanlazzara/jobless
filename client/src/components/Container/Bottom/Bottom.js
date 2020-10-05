@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Card, Button, CardBody, CardText } from 'reactstrap';
 import './style.css';
-import Chart from '../../Chart';
+import Chart from '../../Chart/Chart';
 
 const Bottom = (props) => {
   return (
