@@ -1,6 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "engines": {
+        "node": "14.8.0"
+      },
   "description": "serverside is the best side",
   "main": "app.js",
   "scripts": {
