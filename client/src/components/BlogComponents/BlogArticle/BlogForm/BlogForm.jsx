@@ -1,8 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import Header from '../../../Header';
-import Footer from '../../../Footer';
+import Header from '../../../Header/Header';
+import Footer from '../../../Footer/Footer';
 
 class BlogForm extends React.Component {
   constructor(props) {

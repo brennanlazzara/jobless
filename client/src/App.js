@@ -4,13 +4,13 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import Cookies from 'js-cookie';
 import { logInUserWithOauth, loadMe } from './store/actions/authActions';
-import BlogHome from './Pages/BlogHome';
-import BlogForm from './components/BlogComponents/BlogArticle/BlogForm';
-import Home from './Pages/Home';
-import About from './Pages/About';
-import Login from './Pages/Login';
-import JobListingPage from './Pages/JobListings';
-import Register from './Pages/Register';
+import BlogHome from './Pages/BlogHome/BlogHome';
+import BlogForm from './components/BlogComponents/BlogArticle/BlogForm/BlogForm';
+import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
+import Login from './Pages/Login/Login';
+import JobListingPage from './Pages/JobListings/JobListings';
+import Register from './Pages/Register/Register';
 import Loader from './components/Loader/Loader';
 
 const App = ({ logInUserWithOauth, auth, loadMe }) => {

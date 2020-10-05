@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter, Switch, Route } from 'react-router-dom';
 
-import { BlogHome } from '../../../pages/bloghome';
+import { BlogHome } from '../../../Pages/BlogHome';
 
 const Blog = (props) => {
   return (

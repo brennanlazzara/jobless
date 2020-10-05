@@ -1,30 +1,33 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Redirect, Link } from 'react-router-dom';
+import { useFormik } from 'formik';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
-import { useFormik } from 'formik';
-import { registerUserWithEmail } from '../../store/actions/registerActions';
-import { registerSchema } from './validation';
-import './styles.css';
+import { loginUserWithEmail } from '../../store/actions/authActions';
+import { GOOGLE_AUTH_LINK } from '../../constants';
+import { loginSchema } from './validation';
+import './style.css';
 
-const Register = ({ auth, history, registerUserWithEmail }) => {
+const Login = ({ auth, history, loginUserWithEmail }) => {
   const formik = useFormik({
     initialValues: {
-      name: '',
-      username: '',
       email: '',
       password: '',
     },
-    validationSchema: registerSchema,
+    validationSchema: loginSchema,
     onSubmit: (values) => {
-      registerUserWithEmail(values, history);
+      loginUserWithEmail(values, history);
     },
   });
 
+  if (auth.isAuthenticated) return <Redirect to='/' />;
+
   return (
-    <div className='register' style={{ paddingTop: '7%' }}>
+    <div className='container' style={{ paddingTop: '7%' }}>
       <div className='d-flex flex-column justify-content-center' id='login-box'>
-        <form onSubmit={formik.handleSubmit} noValidate>
+        {' '}
+        <form onSubmit={formik.handleSubmit}>
+          <div />
           <div className='login-box-header'>
             <h4
               style={{
@@ -34,10 +37,28 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
                 fontSize: 37,
               }}
             >
-              Register
+              Login
             </h4>
             <a href='/' style={{ textDecoration: 'none' }}>
               Home
+            </a>
+          </div>
+          <div className='login-box-content'>
+            <a href={GOOGLE_AUTH_LINK}>
+              <div className='google-btn'>
+                <div className='google-icon-wrapper'>
+                  <img
+                    className='google-icon'
+                    alt={'google-icon'}
+                    src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg'
+                  />
+                </div>
+                <p className='btn-text'>
+                  <Link style={{ color: 'white', textDecoration: 'none' }}>
+                    Signin with Google
+                  </Link>
+                </p>
+              </div>
             </a>
           </div>
           <div className='d-flex flex-row align-items-center login-box-seperator-container'>
@@ -52,52 +73,19 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
                   color: 'rgb(201,201,201)',
                 }}
               >
-                USER REGISTRATION&nbsp;
+                or
               </p>
             </div>
             <div className='login-box-seperator' />
           </div>
-          <div className='d-flex flex-row align-items-center login-box-seperator-container'>
-            <div className='login-box-seperator' />
-            <div className='login-box-seperator-text' />
-            <div className='login-box-seperator' />
-          </div>
           <div className='email-login' style={{ backgroundColor: '#ffffff' }}>
-            {/* <form onSubmit={formik.handleSubmit} noValidate> */}
-            {/* <h2>Create new account</h2> */}
             <input
-              className='form-control '
-              type='text'
+              className='text form-control email-imput form-control'
               style={{ marginTop: 10 }}
-              placeholder='Name'
-              name='name'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-            />
-
-            {formik.touched.name && formik.errors.name ? (
-              <p className='error'>{formik.errors.name}</p>
-            ) : null}
-            <input
-              className='form-control'
-              type='text'
-              style={{ marginTop: 10 }}
-              placeholder='Username'
-              name='username'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.username}
-            />
-            {formik.touched.username && formik.errors.username ? (
-              <p className='error'>{formik.errors.username}</p>
-            ) : null}
-            <input
-              className='form-control'
-              type='text'
-              style={{ marginTop: 10 }}
-              placeholder='Email'
               name='email'
+              placeholder='Email'
+              minLength={6}
+              type='text'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.email}
@@ -106,11 +94,11 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
               <p className='error'>{formik.errors.email}</p>
             ) : null}
             <input
-              className='form-control password-input form-control'
+              className='text form-control password-input form-control'
               type='password'
-              name='password'
               style={{ marginTop: 10 }}
               placeholder='Password'
+              name='password'
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.password}
@@ -119,17 +107,22 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
               <p className='error'>{formik.errors.password}</p>
             ) : null}
           </div>
+          {auth.error && <p className='error'>{auth.error}</p>}
+          <div
+            className='submit-row'
+            style={{ marginBottom: 8, paddingTop: 0 }}
+          />
           <div
             className='submit-row'
             style={{ marginBottom: 8, paddingTop: 0 }}
           >
             <button
+              disabled={auth.isLoading || !formik.isValid}
               className='btn btn-primary btn-block box-shadow'
               id='submit-id-submit'
               type='submit'
-              disabled={!formik.isValid}
             >
-              Register
+              Login in Now
             </button>
             <div className='d-flex justify-content-between' />
           </div>
@@ -138,9 +131,9 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
             style={{ padding: '10px 20px', paddingBottom: 23, paddingTop: 18 }}
           >
             <p style={{ marginBottom: 0 }}>
-              Have an account?{' '}
-              <a id='register-link' href='/login'>
-                Login
+              Don't you have an account?
+              <a id='register-link' href='/register'>
+                Sign Up!
               </a>
             </p>
           </div>
@@ -152,10 +145,10 @@ const Register = ({ auth, history, registerUserWithEmail }) => {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  register: state.register,
+  errors: state.errors,
 });
 
 export default compose(
   withRouter,
-  connect(mapStateToProps, { registerUserWithEmail })
-)(Register);
+  connect(mapStateToProps, { loginUserWithEmail })
+)(Login);
