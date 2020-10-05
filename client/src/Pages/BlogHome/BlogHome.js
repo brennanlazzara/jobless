@@ -3,8 +3,8 @@ import axios from 'axios';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import Spinner from '../../components/BlogComponents/Spinner/Spinner';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 
 const BlogHome = (props) => {
   useEffect(() => {
