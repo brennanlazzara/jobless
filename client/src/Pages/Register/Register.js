@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { useFormik } from 'formik';
 import { registerUserWithEmail } from '../../store/actions/registerActions';
 import { registerSchema } from './validation';
-import './styles.css';
+import './style.css';
 
 const Register = ({ auth, history, registerUserWithEmail }) => {
   const formik = useFormik({

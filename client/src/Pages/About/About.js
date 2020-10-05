@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import './styles.css';
+import './style.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';

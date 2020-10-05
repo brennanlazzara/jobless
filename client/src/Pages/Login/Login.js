@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { loginUserWithEmail } from '../../store/actions/authActions';
 import { GOOGLE_AUTH_LINK } from '../../constants';
 import { loginSchema } from './validation';
-import './styles.css';
+import './style.css';
 
 const Login = ({ auth, history, loginUserWithEmail }) => {
   const formik = useFormik({
