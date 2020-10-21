@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import axios from 'axios';
-import SearchBar from '../../components/SearchBar/SearchBar';
-import JobTable from '../../components/JobTable/JobTable';
+import SearchBar from '../../components/SearchBar/searchBar';
+import JobTable from '../../components/jobTable/jobTable';
 
 const JobListingPage = () => {
   // Declare a new state variable to set all employees
