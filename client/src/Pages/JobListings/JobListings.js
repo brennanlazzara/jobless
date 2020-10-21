@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import axios from 'axios';
-import Search from '../../components/SearchBar/SearchBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import JobTable from '../../components/JobTable/JobTable';
 
 const JobListingPage = () => {
@@ -55,7 +55,7 @@ const JobListingPage = () => {
         Your Next Opportunity Awaits...
         <hr />
       </h1>
-      <Search setFilterText={setFilterText} />
+      <SearchBar setFilterText={setFilterText} />
       <JobTable jobData={filteredJobs} />;
       <Footer />
     </div>

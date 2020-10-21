@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, FormGroup, Label, Input } from 'reactstrap';
 
-function Search(props) {
+function SearchBar(props) {
   return (
     <Form>
       <FormGroup>
@@ -23,4 +23,4 @@ function Search(props) {
   );
 }
 
-export default Search;
+export default SearchBar;
