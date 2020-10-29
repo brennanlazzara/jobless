@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Joi = require('joi');
-const faker = require('faker');
 const User = require('../../models/User');
 const requireLocalAuth = require('../../middleware/requireLocalAuth');
 const registerSchema = require('../../services/validators').registerSchema;
@@ -42,7 +41,6 @@ router.post('/register', async (req, res, next) => {
         password,
         username,
         name,
-        avatar: faker.image.avatar(),
       });
 
       newUser.registerUser(newUser, (err, user) => {
