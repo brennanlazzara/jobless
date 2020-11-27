@@ -2,8 +2,8 @@ import React from 'react';
 import './style.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithubAlt, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+// import {  } from '@fortawesome/free-brands-svg-icons';
 
 function index() {
   return (
